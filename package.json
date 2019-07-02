@@ -1,0 +1,41 @@
+{
+  "name": "qa.live.study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env PORT=3001 node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.6.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-node": "^9.1.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.16.2",
+    "handlebars": "^4.1.2",
+    "joi": "^14.3.1",
+    "mongoose": "^5.6.2",
+    "mongoose-auto-increment": "^5.0.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1",
+    "passport": "^0.4.0",
+    "prettier": "^1.18.2",
+    "req-flash": "0.0.3",
+    "validator": "^11.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "cookie-parser": "^1.4.4",
+    "cross-env": "^5.2.0",
+    "mongodb": "^3.2.7"
+  }
+}

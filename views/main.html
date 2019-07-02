@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>QA.Live.Study</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="img/png" href="img/logo_50x50.png" />
+    <link rel="stylesheet" href="css/reboot.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/support/button-up.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<header class="header fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" style="opacity: 0.75 !important;">
+            <a class="navbar-brand item-transition" href="/"><img src="img/logo_50x50.png" class="" alt=""></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navb" class="navbar-collapse collapse hide">
+                <ul class="navbar-nav">
+                    <li class="nav-item active dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!">Курсы</a>
+                        <div class="dropdown-menu">
+                            <a href="/courses/manual-qa" class="dropdown-item">Мануальное тестирование ПО</a>
+                            <a href="/courses/java-qa" class="dropdown-item">Курс по Java для тестировщиков</a>
+                            <a href="/js-qa" class="dropdown-item">Курс по JavaScript для тестировщиков</a>
+                            <a href="#!" class="dropdown-item">Автоматизация тестирования ПО на Java</a>
+                            <a href="#!" class="dropdown-item">Автоматизация тестирования ПО на JavaScript</a>
+                            <a href="#!" class="dropdown-item">Нагрузочное тестирование с использованием JMeter</a>
+                            <a href="#!" class="dropdown-item">Тестирование API с использованием Postman</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!">Вебинары</a>
+                        <div class="dropdown-menu">
+                            <a href="#!" class="dropdown-item">Архив вебинаров</a>
+                            <a href="#!" class="dropdown-item">Предстоящие вебинары</a>
+                            <a href="#!" class="dropdown-item">Записаться на вебинар</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!">Справочники</a>
+                        <div class="dropdown-menu">
+                            <a href="#!" class="dropdown-item">Справочник по QA</a>
+                            <a href="#!" class="dropdown-item">Справочник по Java</a>
+                            <a href="#!" class="dropdown-item">Справочник по JavaScript</a>
+                            <a href="#!" class="dropdown-item">Справочник по Selenium WebDrier</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!">Статьи</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Архив статей</a>
+                            <a href="#" class="dropdown-item">Актуальные статьи</a>
+                            <a href="#" class="dropdown-item">Рассказы тестировщиков о работе</a>
+                            <a href="#" class="dropdown-item">Форум пользователей</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!">Услуги</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Индивидуальные занятия</a>
+                            <a href="#" class="dropdown-item">Групповые занятия</a>
+                            <a href="#" class="dropdown-item">Тестовое собеседование</a>
+                            <a href="#" class="dropdown-item">Тестирование вашего функционала</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#!">О нас</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Об авторах</a>
+                            <a href="#" class="dropdown-item">О платформе</a>
+                            <a href="#" class="dropdown-item">Видео инструкция</a>
+                            <a href="#" class="dropdown-item">Контакты</a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/reg" class="nav-link"><span class="fas fa-user"></span> Регистрация</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link"><span class="fas fa-sign-in-alt"></span> Вход</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="section-about-top pt-5 pb-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <p class="section-home-top__text text-center">
+                    <strong class="text-danger">QA.live.study</strong>
+                    <span class="text-info"> - онлайн платформа по обучению <strong class="text-danger">тестированию программного обеспечения</strong> и изучению инструментов для различных видов тестирования</span>
+                </p>
+                <div class="section-home-top__links d-flex justify-content-center mt-5">
+                    <a href="/reg" class="btn btn-secondary text-white mr-3">Зарегистрироваться</a>
+                    <a href="/login" class="btn btn-primary text-white">Войти</a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center">
+                <img src="img/img_process.png" class="section-home-top__img" alt="" width="100%">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-about pb-5 pt-5">
+    <div class="container">
+        <div class="row pb-5">
+            <div class="col col-sm-12 col-md-12 col-lg-12 text-center text-light">
+                <h3 class="section-title text-white">Информация о платформе QA.<span class="section-home__header-span">live.study</span></h3>
+            </div>
+        </div>
+        <div class="row valign-wrapper">
+            <div class="col col-sm-12 col-md-12 col-lg-4 text-center text-light">
+                <div class="col col-sm-12 col-md-12 col-lg-12 section-home--margin-bottom-40">
+                    <div class="section-home__company-statistic">
+                        <div class="section-home__company-statistic-count">
+                            3
+                        </div>
+                        <div class="section-home__company-statistic-description">
+                            года<br> на рынке
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 section-home--margin-bottom-40">
+                    <div class="section-home__company-statistic">
+                        <div class="section-home__company-statistic-count">
+                            100
+                        </div>
+                        <div class="section-home__company-statistic-description">
+                            +<br> учащихся
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-center text-light item-transition">
+                <a href="/"><img src="img/logo_300x300.png" class="" alt="" style="height: 250px;"></a>
+            </div>
+            <div class="col col-sm-12 col-md-12 col-lg-4 valid-wrapper text-center text-light">
+                <div class="col col-sm-12 col-md-12 col-lg-12 section-home--margin-bottom-40">
+                    <div class="section-home__company-statistic">
+                        <div class="section-home__company-statistic-count">
+                            6
+                        </div>
+                        <div class="section-home__company-statistic-description">
+                            онлайн<br> курсов
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-sm-12 col-md-12 col-lg-12 section-home--margin-bottom-40">
+                    <div class="section-home__company-statistic">
+                        <div class="section-home__company-statistic-count">
+                            3
+                        </div>
+                        <div class="section-home__company-statistic-description">
+                            потока<br> курсов
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="section-home__company-statistic">
+                    <div class="section-home__company-statistic-count">
+                        77%
+                    </div>
+                    <div class="section-home__company-statistic-description">
+                        трудоустроенных<br> учащихся
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-advantages pb-5 pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 text-center">
+                <h3 class="section-title">Наши преимущества</h3>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-sm-12 col-md-12">
+                <div class="z-depth-4" style="background-color: #76ae63;">
+                    <div class="section-advantages__best pt-5 pb-3 pl-3 pr-3 shadow">
+                        <h3 class="section-advantages__best-title">Кто мы</h3>
+                        <p class="section-advantages__best-description">
+                            — Онлайн-школа <span class="text-primary">[QA.</span><span class="text-danger">live.study</span><span class="text-primary">]</span> совмещает в себе преимущества онлайн обучения и живого взаимодействия с преподавателем. У нас более 3-х лет опыта проведения online курсов по Тестированию ПО и другим технологиям.
+                            <br>
+                            — Невероятно понятные и детальные лекции. Даже самые базовые понятия детально разобраны и разложены на молекулы.
+                            <br>
+                            — Видео лекции доступны 24/7, конспекты с ключевой информацией, тесты и упражнения для закрепления знаний.
+                            <br>
+                            — Основное домашнее задание, которое будет проверено нашей командой и как результат — вы получаете CodeReview в текстовом или видео формате.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6 mb-4">
+                <div class="z-depth-4" style="background-color: #64798a;">
+                    <div class="section-advantages__best pt-5 pb-3 pl-3 pr-3 shadow">
+                        <h3 class="section-advantages__best-title">Одна цена за все курсы</h3>
+                        <p class="section-advantages__best-description">
+                            Оформив подписку, которая оплачивается один раз в месяц, вы автоматически получаете доступ ко всем обучающим курсам, размещенным на нашем сайте.
+                            <br>
+                            Как показала практика, помесячная оплата более удобна. Вы можете самостоятельно определять с какой скоростью проходить обучение. В среднем у наших учеников уходит 2-4 месяца на завершение курса. Но вы можете справиться и быстрее.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="z-depth-4" style="background-color: #f9a825;">
+                    <div class="section-advantages__best pt-5 pb-3 pl-3 pr-3 shadow">
+                        <h3 class="section-advantages__best-title">Демо доступ</h3>
+                        <p class="section-advantages__best-description">
+                            Сомневаетесь подойдет ли вам курс? У нас есть эксклюзивное предложение.
+                            <br>
+                            Всего за 270 грн. вы получаете доступ к курсу «Понятный JavaScript (Beginner)» и к первым 5 уроком из всех остальных курсов, которые есть на нашем сайте. Так вы сможете убедиться в высоком качестве и полезности нашего материала.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-courses pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 text-center">
+                <h3 class="section-title">Наши курсы</h3>
+            </div>
+        </div>
+        <div class="courses-item-wrapper">
+            <div class="container">
+                <div id="courses"></div>
+                <!--image gallery-->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-events pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h3 class="section-title">Фото с проведенных событий</h3>
+            </div>
+        </div>
+        <div id="events" class="row section-events__img">
+            <!--image gallery-->
+        </div>
+    </div>
+</section>
+
+<section class="section-tools pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h3 class="section-title">Необходимые инструменты для тестирования</h3>
+            </div>
+        </div>
+        <div id="tools" class="wraper select-all-items show-items-rows js-masonry"
+             data-masonry-options='{"itemSelector": "200", "columWidth": ".item"}'>
+            <!--image gallery-->
+        </div>
+
+    </div>
+</section>
+
+<section class="section-articles pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h3 class="section-title">Свежие статьи</h3>
+            </div>
+        </div>
+        <div id="articles" class="section-articles__items">
+            <!--image gallery-->
+        </div>
+        <div class="section-articles__more">
+            <input type="button" id="btnShowAllArticles" class="btn btn-courses" value="Читать все сатьи ▼" />
+        </div>
+    </div>
+</section>
+
+<section class="section-rate pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 text-center">
+                <h3 class="section-title">Тарифы</h3>
+            </div>
+        </div>
+        <div class="row">
+<!--            s12 m12 l4-->
+            <div class="col-12 col-sm-12 col-md-4 mb-5">
+                <div class="z-depth-3">
+                    <div class="price-block">
+                        <div class="price-block__header">
+                            <div class="price-block__plan">Basic</div>
+                            <div class="price-block__price">
+                                <div class="price-block__quantity">270<span class="price-block__currency">грн.</span></div>
+                                <div class="price-block__currency">≈10$</div>
+                                <div class="price-block__currency">месяц</div>
+                            </div>
+                        </div>
+                        <div class="price-block__description">
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Доступ к обучающей платформе на 1 месяц
+                                </span>
+                            </div>
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Полный доступ ко всем курсам, кроме автоматизации
+                                </span>
+                            </div>
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Фидбеки по домашним заданиям
+                                </span>
+                            </div>
+                        </div>
+                        <div class="price-block__footer">
+                            <a href="#!" class="waves-effect waves-light btn-large">Оформить подписку</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 mb-5">
+                <div class="z-depth-3">
+                    <div class="price-block">
+                        <div class="price-block__header">
+                            <div class="price-block__plan">Standart</div>
+                            <div class="price-block__price">
+                                <div class="price-block__quantity">790<span class="price-block__currency">грн.</span></div>
+                                <div class="price-block__currency">≈28$</div>
+                                <div class="price-block__currency">месяц</div>
+                            </div>
+                        </div>
+                        <div class="price-block__description">
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Доступ к обучающей платформе на 1 месяц
+                                </span>
+                            </div>
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Полный доступ ко всем курсам, включая курсы по автоматизации
+                                </span>
+                            </div>
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Методическое пособие (конспекты лекций, примеры кода)
+                                </span>
+                            </div>
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Четыре индивидуальных занятий в месяц
+                                </span>
+                            </div>
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Доступ в закрытый Slack-чат
+                                </span>
+                            </div>
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Фидбеки по домашним заданиям
+                                </span>
+                            </div>
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Возможность заказать индивидуальную консультацию и разбор всех домашних заданий
+                                </span>
+                            </div>
+                        </div>
+                        <div class="price-block__footer">
+                            <a href="#!" class="waves-effect waves-light btn-large">Оформить подписку</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 mb-5">
+                <div class="z-depth-3">
+                    <div class="price-block">
+                        <div class="price-block__header">
+                            <div class="price-block__plan">Premium</div>
+                            <div class="price-block__price">
+                                <div class="price-block__quantity">2500<span class="price-block__currency">грн.</span></div>
+                                <div class="price-block__currency">≈89$</div>
+                                <div class="price-block__currency">месяц</div>
+                            </div>
+                        </div>
+                        <div class="price-block__description">
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Все из тарифа Standart
+                                </span>
+                            </div>
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Возможность учавствовать в премиальном обучении (практические онлайн занятия)
+                                </span>
+                            </div>
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Индивидуальная проверка всех домашних заданий из каждого курса
+                                </span>
+                            </div>
+                            <div class="price-block__description-item">
+                                <i class="fa fa-check" aria-hidden="true"></i>
+                                <span>
+                                    Гарантированный сертификат о завершении каждого из курсов (отправляем заламинированный сертификат почтой)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="price-block__footer">
+                            <a href="#!" class="waves-effect waves-light btn-large">Оформить подписку</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div>
+                    <a href="#!" class="btn btn-outline-primary btn-lg btn-block">Детальнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer bg-dark text-white pb-5 pt-5">
+    <div class="container">
+        <div class="row s12">
+            <div class="col footer-item">
+                <h3 class="text-uppercase mb-4 font-weight-bold footer-item__title">Курсы</h3>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Мануальное тестирование ПО</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Курс по Java для тестировщиков</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Курс по JavaScript для тестировщиков</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Автоматизация тестирования ПО на Java</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Автоматизация тестирования ПО на JavaScript</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Нагрузочное тестирование с использованием JMeter</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Тестирование API с использованием Postman</a></p>
+            </div>
+            <div class="col footer-item">
+                <h3 class="text-uppercase mb-4 font-weight-bold footer-item__title">Вебинары</h3>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Архив вебинаров</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Предстоящие вебинары</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Записаться на вебинар</a></p>
+            </div>
+            <div class="col footer-item">
+                <h3 class="text-uppercase mb-4 font-weight-bold footer-item__title">Справочник</h3>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Справочник по QA</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Справочник по Java</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Справочник по JavaScript</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Справочник по Selenium WebDrier</a></p>
+            </div>
+            <div class="col footer-item">
+                <h3 class="text-uppercase mb-4 font-weight-bold footer-item__title">Статьи</h3>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Архив статей</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Актуальные статьи</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Рассказы тестировщиков о работе</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Форум пользователей</a></p>
+            </div>
+            <div class="col footer-item">
+                <h3 class="text-uppercase mb-4 font-weight-bold footer-item__title">Услуги</h3>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Индивидуальные занятия</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Групповые занятия</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Тестовое собеседование</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Тестирование вашего функционала</a></p>
+            </div>
+            <div class="col footer-item">
+                <h3 class="text-uppercase mb-4 font-weight-bold footer-item__title">О нас</h3>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Об авторах</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">О платформе</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Видео инструкция</a></p>
+                <p class="footer-item__text"><a class="footer-item__link text-white" href="#!">Контакты</a></p>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <ul class="socialIcons">
+                <li class="facebook"><a href="#"><i class="fa fa-fw fa-facebook"></i>Facebook</a></li>
+                <li class="twitter"><a href="#"><i class="fa fa-fw fa-twitter"></i>Twitter</a></li>
+                <li class="instagram"><a href="#"><i class="fa fa-fw fa-instagram"></i>Instagram</a></li>
+                <li class="skype"><a href="#"><i class="fa fa-fw fa-skype"></i>Skype</a></li>
+                <li class="linkedin"><a href="#"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center d-flex justify-content-center">
+        <h3 class="footer-copyright">QA.live.study © 2018-2019 Все права защищены</h3>
+    </div>
+    <!-- Copyright -->
+</footer>
+
+<a href="#" title="Вернуться к началу" class="topbutton"><i class="arrow up"></i></a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/section-tools.js"></script>
+<script src="js/section-courses.js"></script>
+<script src="js/section-events.js"></script>
+<script src="js/section-articles.js"></script>
+</body>
+
+</html>
