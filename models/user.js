@@ -1,42 +1,36 @@
-'use strict';
-
 const mongoose = require('mongoose');
-let validator = require('validator');
 const Schema = mongoose.Schema;
-const autoIncrement = require('mongoose-auto-increment');
 
-mongoose.set('useCreateIndex', true);
-mongoose.set('useFindAndModify', false);
-
-mongoose.connect('mongodb+srv://dpinchuk:dmss111278DAP@cluster0-09iwb.mongodb.net/QALiveStudy?retryWrites=true&w=majority', {useNewUrlParser: true}, (error) => {
-    if (error) {
-        console.log(error)
-    } else {
-        console.log("connection successful")
-    }
-});
-
-const connection = mongoose.createConnection('mongodb+srv://dpinchuk:dmss111278DAP@cluster0-09iwb.mongodb.net/QALiveStudy?retryWrites=true&w=majority', {useNewUrlParser: true});
-autoIncrement.initialize(connection);
-
-const userSchema = new Schema({
-    name: String,
-    lastname: String,
-    login: {
-        type: String,
-        required: true,
-        unique: true,
-        lowercase: true,
-        validate: (value) => {
-            return validator.isEmail(value)
-        }
+const user = new Schema(
+    {
+        name: String,
+        lastname: String,
+        login: {
+            type: String,
+            require: true
+        },
+        password: {
+            type: String,
+            require: true
+        },
+        role: {
+            type: String,
+            require: true
+        },
+        status: {
+            type: String,
+            require: true
+        },
+        courses: []
     },
-    password: String,
-    role: String,
-    status: Boolean,
-    courses: Object
+
+    {
+        timestamps: true
+    }
+);
+
+user.set('toJSON', {
+    virtuals: true
 });
 
-userSchema.plugin(autoIncrement.plugin, 'user');
-
-module.exports = mongoose.model('users', userSchema);
+module.exports = mongoose.model('users', user);
