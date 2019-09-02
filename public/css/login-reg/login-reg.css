@@ -36,3 +36,15 @@ a {
 .card {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+
+.card-header {
+    padding: .75rem 5.25rem !important;
+}
+
+input:valid {
+    border-bottom: 1px solid green;
+}
+
+input:invalid {
+    border-bottom: 1px solid red;
+}

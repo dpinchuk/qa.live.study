@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<ul>
+    <% users.forEach(function(user){ %>
+        <li>
+            <b><%= user.login %></b>
+            <br>
+            <%= user.status %>
+        </li>
+        <br>
+        <br>
+    <% }); %>
+</ul>
+
+</body>
+</html>

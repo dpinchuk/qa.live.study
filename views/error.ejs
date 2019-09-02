@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="<%= assetFingerprint('css/404.css') %>">
+<% include layouts/header.ejs %>
+
+<div class="text-center pt-3">
+    <div class="container">
+        <div class="pb-2"><a href="/"><img src="img/logo_300x300.png" alt="" style="height: 150px;"></a></div>
+        <h1 class="font-weight-bold display-3 text-danger pb-4">
+            <%= message %> <%= error.status %>
+        </h1>
+        <div class="text-center pb-4">
+            <a href="/" class="btn btn-light btn-lg">Перейти на главную</a>
+        </div>
+        <div class="text-center mb-5">
+            <img src="img/img_process.png" class="" alt="" width="40%">
+        </div>
+        <pre>
+            <%= error.stack %>
+        </pre>
+    </div>
+</div>
+
+<% include layouts/footer.ejs %>

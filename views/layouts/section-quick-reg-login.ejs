@@ -1,0 +1,57 @@
+<section class="section-quick-reg-login pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3 class="section-title">Быстрая регистрация / авторизация</h3>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-between">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="quick-reg__item">
+                            <h3 class="item-title">Регистрация</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad deserunt dolor error labore provident! Accusantium corporis dolorum ducimus eaque eveniet ipsum laboriosam laborum, modi obcaecati quisquam repellat veritatis, voluptate voluptatum.</p>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="quick-reg__item">
+                            <h3 class="item-title">Авторизация</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias assumenda autem beatae blanditiis enim exercitationem, magnam maiores modi, nisi omnis quae quos similique sint voluptas! Consequatur debitis dolore exercitationem.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 quick-reg__item">
+                <h3 class="item-title">Вход</h3>
+
+                <% include quick-login.ejs %>
+
+                <% include quick-reg.ejs %>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Disable form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+</section>

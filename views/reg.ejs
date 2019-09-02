@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="<%= assetFingerprint('css/login-reg/login-reg.css') %>">
+<% include layouts/header.ejs %>
+
+<div class="reg-form mt-1  position-relative">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class=".col-12">
+                <div class="card border-info text-center">
+                    <div class="card-header">
+                        Регистрация
+                    </div>
+                    <div class="card-body">
+                        <div class="card-body__img item-transition pt-2 pb-2">
+                            <a href="/"><img src="img/logo_500x500.png" width="160"></a>
+                        </div>
+                        <form name="regForm" class="register" method="post">
+                            <div class="">
+<!--                                <input type="text" name="name" class="form-control mb-2" placeholder="Ваше Имя" required data-value-missing="Translate('Required')" pattern="/^[a-z]{2,35}$/" >-->
+                                <input id="register-name" type="text" name="name" class="form-control mb-2" placeholder="Ваше Имя" minlength="2" maxlength="35" >
+<!--                                <div class="error" id="nameErr"></div>-->
+                            </div>
+
+                            <div class="">
+                                <input id="register-lastName" type="text" name="lastName" class="form-control mb-2" placeholder="Ваша Фамилия"  minlength="1" maxlength="35" >
+<!--                                <input type="text" name="lastName" class="form-control mb-2" placeholder="Ваша Фамилия" >-->
+                            </div>
+
+                            <div class="">
+                                <input id="register-email" type="text" name="email" class="form-control mb-2" placeholder="Ваш Email*" required autofocus >
+                            </div>
+                            <div class="">
+                                <input id="register-password" type="password" name="password" class="form-control mb-2" placeholder="Пароль*" required minlength="6" maxlength="32" >
+<!--                                <input type="password" name="password" class="form-control mb-2" placeholder="Пароль*" >-->
+                            </div>
+
+                            <div class="">
+                                <input id="register-confirmPass" type="password" name="confirmPass" class="form-control mb-2" placeholder="Подтверждение пароля*" required minlength="6" maxlength="32" >
+<!--                                <input type="password" name="confirmPass" class="form-control mb-2" placeholder="Подтверждение пароля*" >-->
+                            </div>
+
+                            <button class="btn btn-lg btn-primary btn-block mb-1 register-button" type="submit">Зарегистрироваться</button>
+                            <a href="/help" class="float-right">Нужна помощь?</a>
+                        </form>
+                    </div>
+                </div>
+                <a href="/" class="float-left">Вернуться на главную</a>
+                <a href="/login" class="float-right">Уже есть аккаунт </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="<%= assetFingerprint('/js/register.js') %>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+
+<% include layouts/footer.ejs %>

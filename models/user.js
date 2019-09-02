@@ -1,13 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const user = new Schema(
+const schema = new Schema(
     {
-        name: String,
-        lastname: String,
-        login: {
+        name: {
+            type: String
+        },
+        lastName: {
+            type: String
+        },
+        email: {
             type: String,
-            require: true
+            require: true,
+            unique: true
         },
         password: {
             type: String,
@@ -29,8 +34,8 @@ const user = new Schema(
     }
 );
 
-user.set('toJSON', {
+schema.set('toJSON', {
     virtuals: true
 });
 
-module.exports = mongoose.model('users', user);
+module.exports = mongoose.model('User', schema);
