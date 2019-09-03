@@ -10,8 +10,8 @@ router.get("/account", (req, res) => {
     res.render("./user-account", {
       user: {
         id: id,
-        email: email
-      }
+        email: email,
+      },
     });
   }
 });

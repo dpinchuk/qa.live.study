@@ -16,7 +16,7 @@ module.exports = () => {
 
     mongoose.connect(config.MONGO_URL, {
       useNewUrlParser: true,
-      useCreateIndex: true
+      useCreateIndex: true,
     });
   });
 };

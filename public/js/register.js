@@ -8,14 +8,14 @@ $(() => {
       lastName: $("#register-lastName").val(),
       email: $("#register-email").val(),
       password: $("#register-password").val(),
-      confirmPass: $("#register-confirmPass").val()
+      confirmPass: $("#register-confirmPass").val(),
     };
     console.log(data);
     $.ajax({
       type: "POST",
       data: JSON.stringify(data),
       contentType: "application/json",
-      url: "/reg"
+      url: "/reg",
     }).done(data => {
       if (data.success) {
         regResult("User created successfully!", "alert-success");

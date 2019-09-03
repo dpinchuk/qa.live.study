@@ -7,5 +7,5 @@ module.exports = {
   sign,
   user,
   courses,
-  admin
+  admin,
 };

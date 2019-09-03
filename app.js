@@ -22,8 +22,8 @@ app.use(
     resave: true,
     saveUninitialized: false,
     store: new MongoStore({
-      mongooseConnection: mongoose.connection
-    })
+      mongooseConnection: mongoose.connection,
+    }),
   })
 );
 
@@ -52,8 +52,8 @@ app.get("/", (req, res) => {
   res.render("./main", {
     user: {
       id: id,
-      email: email
-    }
+      email: email,
+    },
   });
 });
 
@@ -65,8 +65,6 @@ app.use("/courses", routes.courses);
 app.use("/", routes.sign);
 
 app.get("/reg", (req, res) => {
-  //checkForUserAuthorization(res, req.session.userId, req.session.userEmail, './reg', './user-account');
-  // console.log(req.session);
   id = req.session.userId;
   email = req.session.userEmail;
   if (!id && !email) {
@@ -77,8 +75,6 @@ app.get("/reg", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
-  //checkForUserAuthorization(res, req.session.userId, req.session.userEmail, './login', './user-account');
-  // console.log(req.session);
   id = req.session.userId;
   email = req.session.userEmail;
   if (!id && !email) {
@@ -134,8 +130,8 @@ let checkForUserAuthorization = (
     res.render(authUserPage, {
       user: {
         id: id,
-        email: email
-      }
+        email: email,
+      },
     });
   }
 };

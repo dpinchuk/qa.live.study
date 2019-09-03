@@ -18,7 +18,7 @@ router.post("/reg", (req, res) => {
     res.json({
       success: false,
       error: "Some fields are not filled.",
-      fields: ["email", "password", "confirmPass"]
+      fields: ["email", "password", "confirmPass"],
     });
   } else if (name.length !== 0 && !validateRegex(name, consts.NAME_PATTERN)) {
     res.json({
@@ -29,7 +29,7 @@ router.post("/reg", (req, res) => {
         " and " +
         consts.USER_NAME_MAX_LENGTH +
         " characters and contains characters: [A-Za-zА-Яа-я0-9]",
-      fields: ["name"]
+      fields: ["name"],
     });
   } else if (
     lastName.length !== 0 &&
@@ -43,7 +43,7 @@ router.post("/reg", (req, res) => {
         " and " +
         consts.USER_LAST_NAME_MAX_LENGTH +
         " characters contains characters: [A-Za-zА-Яа-я0-9]",
-      fields: ["lastName"]
+      fields: ["lastName"],
     });
   } else if (!validateRegex(password, consts.PASSWORD_PATTERN)) {
     res.json({
@@ -54,23 +54,23 @@ router.post("/reg", (req, res) => {
         " and " +
         consts.PASSWORD_MAX_LENGTH +
         " characters.",
-      fields: ["password"]
+      fields: ["password"],
     });
   } else if (password !== confirmPass) {
     res.json({
       success: false,
       error: "Passwords don't match.",
-      fields: ["password", "confirmPass"]
+      fields: ["password", "confirmPass"],
     });
   } else if (!validateRegex(email, consts.EMAIL_PATTERN)) {
     res.json({
       success: false,
       error: "Email is not valid.",
-      fields: ["email"]
+      fields: ["email"],
     });
   } else {
     User.findOne({
-      email: email
+      email: email,
     }).then(user => {
       if (!user) {
         console.log(req.body);
@@ -82,7 +82,7 @@ router.post("/reg", (req, res) => {
             password: hash,
             role: "student",
             status: "active",
-            courses: []
+            courses: [],
           })
             .then(user => {
               req.session.userId = user.id;
@@ -92,14 +92,14 @@ router.post("/reg", (req, res) => {
                 user: {
                   name: req.body.name,
                   lastName: req.body.lastName,
-                  email: req.body.email
-                }
+                  email: req.body.email,
+                },
               });
             })
             .catch(err => {
               res.json({
                 success: false,
-                error: err
+                error: err,
               });
             });
         });
@@ -107,7 +107,7 @@ router.post("/reg", (req, res) => {
         res.json({
           success: false,
           error: "User already exists",
-          fields: ["email"]
+          fields: ["email"],
         });
       }
     });
@@ -125,30 +125,30 @@ router.post("/login", (req, res) => {
     res.json({
       success: false,
       error: "Some fields are not filled.",
-      fields: ["email", "password"]
+      fields: ["email", "password"],
     });
   } else if (!validateRegex(email, consts.EMAIL_PATTERN)) {
     res.json({
       success: false,
       error: "Unknown user",
-      fields: ["email", "password"]
+      fields: ["email", "password"],
     });
   } else if (!validateRegex(password, consts.PASSWORD_PATTERN)) {
     res.json({
       success: false,
       error: "Unknown user",
-      fields: ["email", "password"]
+      fields: ["email", "password"],
     });
   } else {
     User.findOne({
-      email: email
+      email: email,
     })
       .then(user => {
         if (!user) {
           res.json({
             success: false,
             error: "Unknown user",
-            fields: ["email", "password"]
+            fields: ["email", "password"],
           });
         } else {
           bcrypt.compare(password, user.password, (err, result) => {
@@ -156,13 +156,13 @@ router.post("/login", (req, res) => {
               res.json({
                 success: false,
                 error: "Unknown user",
-                fields: ["email", "password"]
+                fields: ["email", "password"],
               });
             } else {
               req.session.userId = user.id;
               req.session.userEmail = user.email;
               res.json({
-                success: true
+                success: true,
               });
             }
           });
@@ -172,7 +172,7 @@ router.post("/login", (req, res) => {
         console.log(err);
         res.json({
           success: false,
-          error: "Unknown user!"
+          error: "Unknown user!",
         });
       });
   }

@@ -5,14 +5,14 @@ $(() => {
     e.preventDefault();
     let data = {
       email: $("#login-email").val(),
-      password: $("#login-password").val()
+      password: $("#login-password").val(),
     };
     console.log(data);
     $.ajax({
       type: "POST",
       data: JSON.stringify(data),
       contentType: "application/json",
-      url: "/login"
+      url: "/login",
     }).done(data => {
       if (data.success) {
         loginResult("Successful authorization!", "alert-success");
