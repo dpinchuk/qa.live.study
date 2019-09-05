@@ -3,6 +3,7 @@
   "env": {
     "NODE_ENV": "development",
     "PORT": 3000,
+    "SESSION_SECRET": "session-secret",
     "MONGO_URL": "mongodb+srv://dpinchuk:dmss111278DAP@cluster0-09iwb.mongodb.net/QALiveStudy?retryWrites=true&w=majority"
   },
   "ext": ".js,.json",

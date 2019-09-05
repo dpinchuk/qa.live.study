@@ -1,5 +1,11 @@
-const sign = require('./sign');
+const sign = require("./sign");
+const user = require("./user");
+const courses = require("./courses");
+const admin = require("./admin");
 
 module.exports = {
-    sign
+  sign,
+  user,
+  courses,
+  admin,
 };
