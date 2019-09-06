@@ -99,6 +99,7 @@ app.use((req, res, next) => {
   next(error);
 });
 
+
 //Error handler
 // app.use((error, req, res, next) => {
 //     res.status(error.status || 500);
@@ -116,24 +117,5 @@ app.use((err, req, res, next) => {
   console.log(err.stack);
   res.status(500).json({ err: "500" });
 });
-
-let checkForUserAuthorization = (
-  res,
-  id,
-  email,
-  notAuthUserPage,
-  authUserPage
-) => {
-  if (!id && !email) {
-    res.render(notAuthUserPage);
-  } else {
-    res.render(authUserPage, {
-      user: {
-        id: id,
-        email: email,
-      },
-    });
-  }
-};
 
 module.exports = app;
