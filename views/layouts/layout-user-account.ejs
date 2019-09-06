@@ -1,6 +1,6 @@
-<section class="section-user-account">
+<div class="user-account">
     <div class="container">
-        <h1 class="section-header pt-5 pb-5 text-center">Аккаунт пользователя</h1>
+        <h1 class="account-header pt-5 pb-5 text-center">Аккаунт пользователя</h1>
         <div class="row">
             <div class="col-sm-12 col-lg-4">
                 <div class="user-bar">
@@ -10,7 +10,7 @@
                         </div>
                         <div class="header-content">
                             <span class="welcome">Привет,</span>
-                            <span class="grey-text text-darken-4"><%=user.email ? user.email.length <= 15 : user.email.slice(0, 12) + '...' %></span>
+                            <span class="grey-text text-darken-4"><%=user.email%></span>
                             <span class="role">Студент</span>
                         </div>
                         <div class="clear"></div>
@@ -64,4 +64,4 @@
             </div>
         </div>
     </div>
-</section>
+</div>
