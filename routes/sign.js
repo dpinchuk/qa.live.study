@@ -82,11 +82,25 @@ router.post("/reg", (req, res) => {
             password: hash,
             role: "student",
             status: "active",
+            tariff: "not selected",
+            expirationDate: "",
             courses: [],
           })
             .then(user => {
+
+              /********************************************************************************************************/
               req.session.userId = user.id;
               req.session.userEmail = user.email;
+              req.session.userName = user.name;
+              req.session.userLastName = user.lastName;
+              req.session.userLastName = user.lastName;
+              req.session.userRole = user.role;
+              req.session.userStatus = user.status;
+              req.session.userTariff = user.tariff;
+              req.session.userExpirationDate = user.expirationDate;
+              req.session.userCourses = user.courses;
+              /********************************************************************************************************/
+
               res.json({
                 success: true,
                 user: {
@@ -159,8 +173,18 @@ router.post("/login", (req, res) => {
                 fields: ["email", "password"],
               });
             } else {
+              /********************************************************************************************************/
               req.session.userId = user.id;
               req.session.userEmail = user.email;
+              req.session.userName = user.name;
+              req.session.userLastName = user.lastName;
+              req.session.userLastName = user.lastName;
+              req.session.userRole = user.role;
+              req.session.userStatus = user.status;
+              req.session.userTariff = user.tariff;
+              req.session.userExpirationDate = user.expirationDate;
+              req.session.userCourses = user.courses;
+              /********************************************************************************************************/
               res.json({
                 success: true,
               });

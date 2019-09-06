@@ -27,6 +27,7 @@ app.use(
   })
 );
 
+
 /* app.use */
 app.use(staticAsset(path.join(__dirname, "public")));
 app.use(express.static(__dirname + "/public"));
@@ -51,8 +52,8 @@ app.get("/", (req, res) => {
   email = req.session.userEmail;
   res.render("./main", {
     user: {
-      id: id,
-      email: email,
+      id,
+      email
     },
   });
 });
@@ -108,6 +109,7 @@ app.use((req, res, next) => {
 //         error: !config.IS_PRODUCTION ? error : {}
 //     });
 // });
+
 app.use((req, res, next) => {
   res.status(500).json({ err: "500" });
 });
