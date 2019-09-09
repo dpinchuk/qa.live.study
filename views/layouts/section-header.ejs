@@ -74,7 +74,11 @@
                         </li>
                         <%} else {%>
                             <li class="nav-item nav-item__user">
-                                <p class="user-data"><span class="text-info"><%=user.email%></span></p>
+                                <% if(!user.name) { %>
+                                    <p class="user-data"><span class="text-info"><%= user.email.length <= 27 ? user.email : user.email.substr(0, 27) + '...' %></span></p>
+                                <% } else { %>
+                                    <p class="user-data"><span class="text-info"><%= user.name.length <= 27 ? user.name : user.name.substr(0, 27) + '...' %></span></p>
+                                <% } %>
                             </li>
                             <li class="nav-item">
                                 <a href="/logout" class="nav-link text-danger"><span class="fas fa-sign-in-alt"></span> Выход</a>

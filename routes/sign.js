@@ -1,6 +1,6 @@
 const express = require("express");
 const consts = require("../static/const");
-const validateRegex = require("../utils/utils");
+const isValidateRegex = require("../utils/utils");
 const User = require("../models/user");
 const bcrypt = require("bcrypt-nodejs");
 const router = express.Router();
@@ -20,7 +20,7 @@ router.post("/reg", (req, res) => {
       error: "Some fields are not filled.",
       fields: ["email", "password", "confirmPass"],
     });
-  } else if (name.length !== 0 && !validateRegex(name, consts.NAME_PATTERN)) {
+  } else if (name.length !== 0 && !isValidateRegex(name, consts.NAME_PATTERN)) {
     res.json({
       success: false,
       error:
@@ -33,7 +33,7 @@ router.post("/reg", (req, res) => {
     });
   } else if (
     lastName.length !== 0 &&
-    !validateRegex(lastName, consts.NAME_PATTERN)
+    !isValidateRegex(lastName, consts.NAME_PATTERN)
   ) {
     res.json({
       success: false,
@@ -45,7 +45,7 @@ router.post("/reg", (req, res) => {
         " characters contains characters: [A-Za-zА-Яа-я0-9]",
       fields: ["lastName"],
     });
-  } else if (!validateRegex(password, consts.PASSWORD_PATTERN)) {
+  } else if (!isValidateRegex(password, consts.PASSWORD_PATTERN)) {
     res.json({
       success: false,
       error:
@@ -62,7 +62,7 @@ router.post("/reg", (req, res) => {
       error: "Passwords don't match.",
       fields: ["password", "confirmPass"],
     });
-  } else if (!validateRegex(email, consts.EMAIL_PATTERN)) {
+  } else if (!isValidateRegex(email, consts.EMAIL_PATTERN)) {
     res.json({
       success: false,
       error: "Email is not valid.",
@@ -82,11 +82,25 @@ router.post("/reg", (req, res) => {
             password: hash,
             role: "student",
             status: "active",
+            tariff: "not selected",
+            expirationDate: "",
             courses: [],
           })
             .then(user => {
+
+              /********************************************************************************************************/
               req.session.userId = user.id;
               req.session.userEmail = user.email;
+              req.session.userName = user.name;
+              req.session.userLastName = user.lastName;
+              req.session.userLastName = user.lastName;
+              req.session.userRole = user.role;
+              req.session.userStatus = user.status;
+              req.session.userTariff = user.tariff;
+              req.session.userExpirationDate = user.expirationDate;
+              req.session.userCourses = user.courses;
+              /********************************************************************************************************/
+
               res.json({
                 success: true,
                 user: {
@@ -127,13 +141,13 @@ router.post("/login", (req, res) => {
       error: "Some fields are not filled.",
       fields: ["email", "password"],
     });
-  } else if (!validateRegex(email, consts.EMAIL_PATTERN)) {
+  } else if (!isValidateRegex(email, consts.EMAIL_PATTERN)) {
     res.json({
       success: false,
       error: "Unknown user",
       fields: ["email", "password"],
     });
-  } else if (!validateRegex(password, consts.PASSWORD_PATTERN)) {
+  } else if (!isValidateRegex(password, consts.PASSWORD_PATTERN)) {
     res.json({
       success: false,
       error: "Unknown user",
@@ -144,10 +158,10 @@ router.post("/login", (req, res) => {
       email: email,
     })
       .then(user => {
-        if (!user) {
+        if (!user || user.status !== 'active') {
           res.json({
             success: false,
-            error: "Unknown user",
+            error: "User does not exist or is blocked",
             fields: ["email", "password"],
           });
         } else {
@@ -159,8 +173,18 @@ router.post("/login", (req, res) => {
                 fields: ["email", "password"],
               });
             } else {
+              /********************************************************************************************************/
               req.session.userId = user.id;
               req.session.userEmail = user.email;
+              req.session.userName = user.name;
+              req.session.userLastName = user.lastName;
+              req.session.userLastName = user.lastName;
+              req.session.userRole = user.role;
+              req.session.userStatus = user.status;
+              req.session.userTariff = user.tariff;
+              req.session.userExpirationDate = user.expirationDate;
+              req.session.userCourses = user.courses;
+              /********************************************************************************************************/
               res.json({
                 success: true,
               });
@@ -169,7 +193,6 @@ router.post("/login", (req, res) => {
         }
       })
       .catch(err => {
-        console.log(err);
         res.json({
           success: false,
           error: "Unknown user!",
@@ -183,7 +206,6 @@ router.get("/logout", (req, res) => {
   if (req.session) {
     req.session.destroy();
   }
-  console.log(req.session);
   res.redirect("/");
 });
 

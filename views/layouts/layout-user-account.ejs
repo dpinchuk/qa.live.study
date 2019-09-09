@@ -10,8 +10,13 @@
                         </div>
                         <div class="header-content">
                             <span class="welcome">Привет,</span>
-                            <span class="grey-text text-darken-4"><%=user.email%></span>
-                            <span class="role">Студент</span>
+                                <% if(!user.name) { %>
+                                    <span class="grey-text text-darken-4"><%= user.email.length <= 18 ? user.email : user.email.substr(0, 15) + '...' %></span>
+                                <% } else { %>
+                                    <span class="grey-text text-darken-4"><%= user.name.length <= 18 ? user.name : user.name.substr(0, 15) + '...' %></span>
+                                <% } %>
+
+                            <span class="role"><%= user.role %></span>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -36,28 +41,29 @@
                 <div class="courses-content">
                     <table class="content-table table-striped table">
                         <thead>
-                        <tr>
-                            <th class="teal lighten-2">Имя курса</th>
-                            <th class="teal lighten-2">Прогресс</th>
-                            <th class="teal lighten-2">Action</th>
-                        </tr>
+                            <tr>
+                                <th class="teal lighten-2">Имя курса</th>
+                                <th class="teal lighten-2">Прогресс</th>
+                                <th class="teal lighten-2">Action</th>
+                            </tr>
                         </thead>
+
                         <tbody>
-                        <tr>
-                            <td class="pl-4">Мануальное тестирование ПО</td>
-                            <td class="pl-4">12%</td>
-                            <td><a href="#!" type="button" class="btn btn-info d-block btn-lg">Продолжить</a></td>
-                        </tr>
-                        <tr>
-                            <td class="pl-4">Курс по Java для тестировщиков</td>
-                            <td class="pl-4">78%</td>
-                            <td><a href="#!" type="button" class="btn btn-info d-block btn-lg">Продолжить</a></td>
-                        </tr>
-                        <tr>
-                            <td class="pl-4">Курс по JavaScript для тестировщиков</td>
-                            <td class="pl-4">100%</td>
-                            <td><a href="#!" type="button" class="btn btn-info btn-lg d-block disabled">Завершен</a></td>
-                        </tr>
+
+                            <% user.courses.forEach(course => { %>
+                            <tr>
+                                <% if(course.progressPercent === 100) { %>
+                                    <td class="pl-4 text-secondary"><%= course.courseName %></td>
+                                    <td class="pl-4 text-secondary"><%= course.progressPercent %>%</td>
+                                    <td><a href="#!" type="button" class="disabled btn btn-info d-block btn-lg">Продолжить</a></td>
+                                <% } else { %>
+                                        <td class="pl-4"><dt><%= course.courseName %></dt></td>
+                                        <td class="pl-4"><dt><%= course.progressPercent %>%</dt></td>
+                                    <td><a href="#!" type="button" class="btn btn-info d-block btn-lg">Продолжить</a></td>
+                                <% } %>
+                            </tr>
+                            <%}) %>
+
                         </tbody>
                     </table>
                 </div>

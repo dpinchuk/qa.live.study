@@ -33,10 +33,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
-app.use(
-  "/js",
-  express.static(path.join(__dirname, "node_modules", "jquery", "dist"))
-);
+app.use("/js",express.static(path.join(__dirname, "node_modules", "jquery", "dist")));
 app.use((req, res, next) => {
   delete req.body.__proto__;
   next();
@@ -51,8 +48,8 @@ app.get("/", (req, res) => {
   email = req.session.userEmail;
   res.render("./main", {
     user: {
-      id: id,
-      email: email,
+      id,
+      email
     },
   });
 });
@@ -108,6 +105,7 @@ app.use((req, res, next) => {
 //         error: !config.IS_PRODUCTION ? error : {}
 //     });
 // });
+
 app.use((req, res, next) => {
   res.status(500).json({ err: "500" });
 });
