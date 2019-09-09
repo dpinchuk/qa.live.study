@@ -15,6 +15,8 @@ const app = express();
 let id = "";
 let email = "";
 
+console.log(routes.courses);
+
 /*Sessions*/
 app.use(
   session({
