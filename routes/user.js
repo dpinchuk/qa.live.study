@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/account", (req, res) => {
+
   let id = req.session.userId;
   let name = req.session.userName;
   let lastName = req.session.userLastName;
@@ -11,6 +12,16 @@ router.get("/account", (req, res) => {
   let tariff = req.session.userTariff;
   let expirationDate = req.session.userExpirationDate;
   let courses = req.session.userCourses;
+
+  // let id = user.id;
+  // let name = user.name;
+  // let lastName = user.lastName;
+  // let email = user.email;
+  // let role = user.role;
+  // let status = user.status;
+  // let tariff = user.tariff;
+  // let expirationDate = user.expirationDate;
+  // let courses = user.courses;
 
   if (!id && !email) {
     res.redirect("/");
@@ -29,10 +40,6 @@ router.get("/account", (req, res) => {
       },
     });
   }
-});
-
-router.get("/password-recovery", (req, res) => {
-  res.render("./password-recovery");
 });
 
 module.exports = router;

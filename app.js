@@ -27,17 +27,13 @@ app.use(
   })
 );
 
-
 /* app.use */
 app.use(staticAsset(path.join(__dirname, "public")));
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
-app.use(
-  "/js",
-  express.static(path.join(__dirname, "node_modules", "jquery", "dist"))
-);
+app.use("/js",express.static(path.join(__dirname, "node_modules", "jquery", "dist")));
 app.use((req, res, next) => {
   delete req.body.__proto__;
   next();

@@ -11,9 +11,9 @@
                         <div class="header-content">
                             <span class="welcome">Привет,</span>
                                 <% if(!user.name) { %>
-                                    <span class="grey-text text-darken-4"><%= user.email %></span>
+                                    <span class="grey-text text-darken-4"><%= user.email.length <= 18 ? user.email : user.email.substr(0, 15) + '...' %></span>
                                 <% } else { %>
-                                    <span class="grey-text text-darken-4"><%= user.name %></span>
+                                    <span class="grey-text text-darken-4"><%= user.name.length <= 18 ? user.name : user.name.substr(0, 15) + '...' %></span>
                                 <% } %>
 
                             <span class="role"><%= user.role %></span>
@@ -52,11 +52,13 @@
 
                             <% user.courses.forEach(course => { %>
                             <tr>
-                                <td class="pl-4"><%= course.courseName %></td>
-                                <td class="pl-4"><%= course.progressPercent %>%</td>
                                 <% if(course.progressPercent === 100) { %>
+                                    <td class="pl-4 text-secondary"><%= course.courseName %></td>
+                                    <td class="pl-4 text-secondary"><%= course.progressPercent %>%</td>
                                     <td><a href="#!" type="button" class="disabled btn btn-info d-block btn-lg">Продолжить</a></td>
                                 <% } else { %>
+                                        <td class="pl-4"><dt><%= course.courseName %></dt></td>
+                                        <td class="pl-4"><dt><%= course.progressPercent %>%</dt></td>
                                     <td><a href="#!" type="button" class="btn btn-info d-block btn-lg">Продолжить</a></td>
                                 <% } %>
                             </tr>
