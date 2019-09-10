@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const schema = new Schema(
+const UserSchema = new Schema(
   {
     name: {
       type: String,
@@ -34,8 +34,10 @@ const schema = new Schema(
   }
 );
 
-schema.set("toJSON", {
+UserSchema.set("toJSON", {
   virtuals: true,
 });
 
-module.exports = mongoose.model("User", schema);
+let User = mongoose.model('User', UserSchema);
+
+module.exports = User;

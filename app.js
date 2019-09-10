@@ -8,14 +8,16 @@ const routes = require("./routes");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
+const Courses = require("./models/courses");
+const Articles = require("./models/articles");
 
 /*App Object*/
 const app = express();
 
-let id = "";
-let email = "";
-
-console.log(routes.courses);
+let id;
+let email;
+let courses;
+let articles;
 
 /*Sessions*/
 app.use(
@@ -41,14 +43,22 @@ app.use((req, res, next) => {
   next();
 });
 
+
 /* app.set */
 app.set("view engine", "ejs");
 
 /* routers */
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+
   id = req.session.userId;
   email = req.session.userEmail;
+
+  courses = await Courses.find({});
+  articles = await Articles.find({});
+
   res.render("./main", {
+    courses,
+    articles,
     user: {
       id,
       email
@@ -58,9 +68,9 @@ app.get("/", (req, res) => {
 
 app.use("/user", routes.user);
 app.use("/admin", routes.admin);
-app.use("/courses", routes.courses);
+//app.use("/courses", routes.courses);
+//app.use("/articles", routes.articles);
 
-/* POST requests */
 app.use("/", routes.sign);
 
 app.get("/reg", (req, res) => {

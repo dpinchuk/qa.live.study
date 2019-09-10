@@ -37,6 +37,7 @@
     "passport": "^0.4.0",
     "prettier": "^1.18.2",
     "req-flash": "0.0.3",
+    "socket.io": "^2.2.0",
     "validator": "^11.1.0"
   },
   "dependencies": {

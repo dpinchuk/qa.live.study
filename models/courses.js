@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const schema = new Schema(
+const CourseSchema = new Schema(
     {
       name: {
         type: String,
@@ -38,8 +38,10 @@ const schema = new Schema(
     }
 );
 
-schema.set("toJSON", {
+CourseSchema.set("toJSON", {
   virtuals: true,
 });
 
-module.exports = mongoose.model("Course", schema);
+let Course = mongoose.model('Course', CourseSchema);
+
+module.exports = Course;
