@@ -7,8 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo 'Error: no test specified' && exit 1",
-    "prettier": "prettier --write \"**/*.{js,json,html}\"",
-    "build": "npm run build-js && npm run build-css"
+    "prettier": "prettier --write \"**/*.{js,json,html}\""
   },
   "keywords": [],
   "author": "",
