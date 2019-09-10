@@ -6,27 +6,55 @@ const UserSchema = new Schema(
     name: {
       type: String,
     },
+
     lastName: {
       type: String,
     },
+
     email: {
       type: String,
       require: true,
       unique: true,
     },
+
     password: {
       type: String,
       require: true,
     },
+
     role: {
       type: String,
       require: true,
     },
+
     status: {
       type: String,
       require: true,
     },
-    courses: [],
+
+    tariff: {
+      type: String,
+      require: true,
+    },
+
+    payments: {
+      type: Array,
+      require: false,
+    },
+    expirationPaidDate: {
+      type: Date,
+      require: false,
+    },
+
+    commentAboutUser: {
+      type: String,
+      require: false,
+    },
+
+    courses: {
+      type: Array,
+      require: false,
+    },
   },
 
   {

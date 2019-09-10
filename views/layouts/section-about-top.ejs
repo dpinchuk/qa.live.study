@@ -7,8 +7,13 @@
                     <span class="text-info"> - онлайн платформа по обучению <strong class="text-danger">тестированию программного обеспечения</strong> и изучению инструментов для различных видов тестирования</span>
                 </p>
                 <div class="section-home-top__links d-flex justify-content-center mt-5">
-                    <a href="/reg" class="btn btn-outline-primary mr-3">Зарегистрироваться</a>
-                    <a href="/login" class="btn btn-primary text-white">Войти</a>
+                    <% if (!user.id && !user.email) { %>
+                        <a href="/reg" class="btn btn-outline-primary mr-3">Зарегистрироваться</a>
+                        <a href="/login" class="btn btn-primary text-white">Войти</a>
+                    <% } else { %>
+                            <a href="/reg" class="btn btn-primary text-white mr-3">В аккаунт пользователя</a>
+                            <a href="/login" class="btn btn-danger text-white">Выход</a>
+                    <% } %>
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center">

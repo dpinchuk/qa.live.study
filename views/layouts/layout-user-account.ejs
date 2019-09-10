@@ -21,53 +21,105 @@
                         <div class="clear"></div>
                     </div>
                     <ul class="bar-body">
-                        <li class="current"><a href="#!" class="collection-item grey-text text-darken-4">Мои курсы</a></li>
-                        <li class=""><a href="#!" class="collection-item grey-text text-darken-4">Профиль</a></li>
                         <li class=""><a href="#!" class="collection-item grey-text text-darken-4">Редактировать профиль</a></li>
                         <li class=""><a href="#!" class="collection-item grey-text text-darken-4">Изменить пароль</a></li>
                         <li><a href="#!" class="collection-item grey-text text-darken-4">Ответы к тестам</a></li>
                         <li><a href="#!" class="collection-item grey-text text-darken-4">Как пользоваться платформой</a></li>
-                        <li class=""><a href="#!" class="collection-item grey-text text-darken-4">Подписка</a></li>
                     </ul>
                     <div class="bar-footer">
-                        <div class="clear"></div>
+                        <div class="clear">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-lg-8">
-                <div class="user-courses">
-                    <h3 class="courses-header">Мои курсы</h3>
+                <div class="d-flex justify-content-around mt-1">
+                    <a href="/" class="btn btn-primary text-white">В главное меню</a>
+                    <a href="/logout" class="btn btn-danger text-white">Выход</a>
                 </div>
-                <div class="courses-content">
-                    <table class="content-table table-striped table">
-                        <thead>
+            </div>
+
+            <div class="col-sm-12 col-lg-8">
+
+                <div class="pb-5">
+                    <div class="user-courses">
+                        <h3 class="courses-header">Мои оплаты</h3>
+                    </div>
+                    <div class="courses-content">
+                        <table class="content-table table-striped table">
+                            <thead>
                             <tr>
                                 <th class="teal lighten-2">Имя курса</th>
                                 <th class="teal lighten-2">Прогресс</th>
                                 <th class="teal lighten-2">Action</th>
                             </tr>
-                        </thead>
+                            </thead>
 
-                        <tbody>
+                            <tbody>
 
                             <% user.courses.forEach(course => { %>
-                            <tr>
-                                <% if(course.progressPercent === 100) { %>
-                                    <td class="pl-4 text-secondary"><%= course.courseName %></td>
-                                    <td class="pl-4 text-secondary"><%= course.progressPercent %>%</td>
-                                    <td><a href="#!" type="button" class="disabled btn btn-info d-block btn-lg">Продолжить</a></td>
-                                <% } else { %>
+                                <tr>
+                                    <% if(course.progressPercent === 100) { %>
+                                        <td class="pl-4 text-secondary"><%= course.courseName %></td>
+                                        <td class="pl-4 text-secondary"><%= course.progressPercent %>%</td>
+                                        <td><a href="#!" type="button" class="disabled btn btn-info d-block btn-lg">Продолжить</a></td>
+                                    <% } else { %>
                                         <td class="pl-4"><dt><%= course.courseName %></dt></td>
                                         <td class="pl-4"><dt><%= course.progressPercent %>%</dt></td>
-                                    <td><a href="#!" type="button" class="btn btn-info d-block btn-lg">Продолжить</a></td>
-                                <% } %>
-                            </tr>
-                            <%}) %>
+                                        <td><a href="#!" type="button" class="btn btn-info d-block btn-lg">Продолжить</a></td>
+                                    <% } %>
+                                </tr>
+                            <% }); %>
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+
+                <div class="pb-5">
+                    <div class="user-courses">
+                        <h3 class="courses-header">Мои оплаты</h3>
+                    </div>
+                    <div class="courses-content">
+                        <table class="content-table table-striped table">
+                            <thead>
+                            <tr>
+                                <th class="teal lighten-2">Дата оплаты</th>
+                                <th class="teal lighten-2">Сумма оплаты, грн.</th>
+                                <th class="teal lighten-2">Период оплаты, мес.</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+
+                            <% user.payments.forEach(payment => { %>
+                                <tr>
+                                    <td class="pl-4 text-secondary"><%= new Date(payment.paymentDate).toLocaleString() %></td>
+                                    <td class="pl-4 text-secondary"><%= payment.paymentSumm %></td>
+                                    <td class="pl-4 text-secondary"><%= payment.paymentMonthPeriod %></td>
+                                </tr>
+                            <% }); %>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
+
         </div>
     </div>
 </div>

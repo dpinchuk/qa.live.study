@@ -83,7 +83,9 @@ router.post("/reg", (req, res) => {
             role: "student",
             status: "active",
             tariff: "not selected",
+            payments: [],
             expirationDate: "",
+            commentAboutUser: "",
             courses: [],
           })
             .then(user => {
@@ -99,6 +101,7 @@ router.post("/reg", (req, res) => {
               req.session.userTariff = user.tariff;
               req.session.userExpirationDate = user.expirationDate;
               req.session.userCourses = user.courses;
+              req.session.userPayments = user.payments;
               /********************************************************************************************************/
 
               res.json({
@@ -182,6 +185,7 @@ router.post("/login", (req, res) => {
               req.session.userTariff = user.tariff;
               req.session.userExpirationDate = user.expirationDate;
               req.session.userCourses = user.courses;
+              req.session.userPayments = user.payments;
               /********************************************************************************************************/
               res.json({
                 success: true,

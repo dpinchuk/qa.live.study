@@ -10,6 +10,7 @@ const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
 const Courses = require("./models/courses");
 const Articles = require("./models/articles");
+const Payments = require("./models/payments");
 
 /*App Object*/
 const app = express();
@@ -18,6 +19,7 @@ let id;
 let email;
 let courses;
 let articles;
+let payments;
 
 /*Sessions*/
 app.use(
@@ -53,10 +55,12 @@ app.get("/", async (req, res) => {
   email = req.session.userEmail;
   courses = await Courses.find({});
   articles = await Articles.find({});
+  payments = await Payments.find({});
 
   res.render("./main", {
     courses,
     articles,
+    payments,
     user: {
       id,
       email
