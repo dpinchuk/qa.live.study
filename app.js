@@ -51,7 +51,6 @@ app.get("/", async (req, res) => {
 
   id = req.session.userId;
   email = req.session.userEmail;
-
   courses = await Courses.find({});
   articles = await Articles.find({});
 
@@ -67,8 +66,6 @@ app.get("/", async (req, res) => {
 
 app.use("/user", routes.user);
 app.use("/admin", routes.admin);
-//app.use("/courses", routes.courses);
-//app.use("/articles", routes.articles);
 
 app.use("/", routes.sign);
 
@@ -106,16 +103,6 @@ app.use((req, res, next) => {
   error.status = 404;
   next(error);
 });
-
-//Error handler
-// app.use((error, req, res, next) => {
-//     res.status(error.status || 500);
-//     console.log(error.stack);
-//     res.render('./error', {
-//         message: error.message,
-//         error: !config.IS_PRODUCTION ? error : {}
-//     });
-// });
 
 app.use((req, res, next) => {
   res.status(500).json({ err: "500" });
