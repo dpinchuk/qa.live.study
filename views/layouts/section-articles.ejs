@@ -5,16 +5,17 @@
                 <h3 class="section-title">Свежие статьи</h3>
             </div>
         </div>
+
         <div id="articles" class="section-articles__items">
 
-            <% articles.forEach(article => { %>
-                <div class='article-item item-transition'>
+            <% let LIMIT = 3; %>
+            <% articles.slice(-LIMIT).forEach(article => { %>
+                <div class='article-item item-transition '>
                     <a href="<%= article.redirectPageClickOnImg %>">
                         <img class='item-img' src='img/section-articles/articles-bg.png' alt=''>
                         <h3 class='item-text'><%= article.name %></h3>
                     </a>
                 </div>
-
             <% }) %>
 
             <!--image gallery-->
@@ -22,5 +23,9 @@
         <div class="section-articles__more">
             <input type="button" id="btnShowAllArticles" class="btn btn-courses" value="Читать все сатьи ▼" />
         </div>
+
+        <!--            TODO    'Свернуть сатьи ▲'-->
+
     </div>
+
 </section>

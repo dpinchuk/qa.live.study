@@ -43,7 +43,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 /* app.set */
 app.set("view engine", "ejs");
 
