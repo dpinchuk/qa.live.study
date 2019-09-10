@@ -89,7 +89,6 @@ router.post("/reg", (req, res) => {
             courses: [],
           })
             .then(user => {
-
               /********************************************************************************************************/
               req.session.userId = user.id;
               req.session.userEmail = user.email;
@@ -159,7 +158,7 @@ router.post("/login", (req, res) => {
       email: email,
     })
       .then(user => {
-        if (!user || user.status !== 'active') {
+        if (!user || user.status !== "active") {
           res.json({
             success: false,
             error: "User does not exist or is blocked",

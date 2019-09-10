@@ -2,8 +2,24 @@
   "version": 2,
   "builds": [
     {
+      "src": "public/**",
+      "use": "@now/static"
+    },
+    {
       "src": "*.js",
       "use": "@now/node-server"
     }
-  ]
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "development",
+    "PORT": "3000",
+    "SESSION_SECRET": "session-secret",
+    "MONGO_URL": "mongodb+srv://dpinchuk:dmss111278DAP@cluster0-09iwb.mongodb.net/QALiveStudy?retryWrites=true&w=majority"
+  }
 }
