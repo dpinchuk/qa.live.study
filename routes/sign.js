@@ -130,8 +130,6 @@ router.post("/reg", (req, res) => {
 
 // Login
 router.post("/login", (req, res) => {
-  console.log(req.body);
-
   const email = req.body.email.trim();
   const password = req.body.password.trim();
 

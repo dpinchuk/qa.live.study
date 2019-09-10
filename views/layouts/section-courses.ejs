@@ -8,6 +8,38 @@
         <div class="courses-item-wrapper">
             <div class="container">
                 <div id="courses"></div>
+                <% let i = 0 %>
+                <% courses.forEach(course => { %>
+                    <div class="courses-wide__row">
+                        <div class="courses-wide__row-container">
+                            <div class="row valign-wrapper p-3 course-border border-primary">
+                                <div class="col-sm-12 col-md-4 courses-wide__row-image">
+                                    <a href="#!" data-target="#demo">
+                                        <img src="<%= course.imgUrl %>" alt="" width'100'="" height="100" style="opacity: 1;">
+                                    </a>
+                                </div>
+                                <div class="col-sm-12 col-md-4">
+                                    <h3 class="courses-wide__row-title"><%= course.name %></h3>
+                                    <p class="courses-wide__row-text">Количество обучающих сессий: <%= course.sessionCount %></p>
+                                </div>
+                                <div class="col-sm-12 col-md-4 courses-wide__row-btn">
+                                    <div class="gdlr-course-button">
+                                        <button type="button" class="btn btn-primary collapsed" data-toggle="collapse" data-target="#demo<%= i %>" aria-expanded="false">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;О курсе&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                    </div>
+                                    <div class="gdlr-course-button">
+                                        <a href="/login" class="btn btn-courses">Подписаться</a>
+                                    </div>
+                                </div>
+                                <div id="demo<%= i %>" class="course-details collapse" style="">
+                                    <p><%= course.summary %></p>
+                                    <a href="<%= course.courseRedirectClickOnDetails %>" class="course-details-link">детальнее&gt;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% i++ %>
+                <% }) %>
+
                 <!--image gallery-->
             </div>
         </div>

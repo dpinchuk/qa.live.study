@@ -1,14 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
-const root = path.join(__dirname, "../views");
+const Course = require("../models/courses");
 
-router.get("/manual-qa", (req, res) => {
-  res.sendFile("./courses/manual-qa.html", { root });
-});
-
-router.get("/java-qa", (req, res) => {
-  res.sendFile("./courses/java-qa.html", { root });
+router.get("/", (req, res) => {
+  Course.find({}, (err, course) => {
+    course.toArray((err, items) => {
+      console.log(items);
+    });
+  }); return courses;
 });
 
 module.exports = router;
