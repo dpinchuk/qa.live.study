@@ -8,7 +8,7 @@
     "dev": "nodemon index.js",
     "test": "echo 'Error: no test specified' && exit 1",
     "prettier": "prettier --write \"**/*.{js,json,html}\"",
-    "build": "qa.live.study build"
+    "build": "build"
   },
   "keywords": [],
   "author": "",
