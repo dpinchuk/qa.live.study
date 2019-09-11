@@ -15,6 +15,16 @@ a:hover {
   color: #b0b0b0 !important;
 }
 
+.btn-left {
+  width: 50%;
+  text-align: left;
+}
+
+.btn-right {
+  width: 50%;
+  text-align: right;
+}
+
 .user-account {
   background-color: #f5f5f5;
 }
