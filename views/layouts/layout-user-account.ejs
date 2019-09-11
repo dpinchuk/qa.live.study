@@ -2,8 +2,15 @@
     <div class="container">
         <h1 class="account-header pt-5 pb-5 text-center">Аккаунт пользователя</h1>
         <div class="row">
+
             <div class="col-sm-12 col-lg-4">
-                <div class="user-bar">
+
+                <div class="d-flex justify-content-between mb-3">
+                    <a href="/" class="btn btn-left btn-primary text-white">В главное меню</a>
+                    <a href="/logout" class="btn btn-right btn-danger text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Выход&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                </div>
+
+                <div class="user-bar mb-3">
                     <div class="bar-header">
                         <div class="header-img">
                             <img src="/img/courses-pages/author/pinchuk_da.jpg" alt="User photo" width="70" height="70">
@@ -16,35 +23,74 @@
                                     <span class="grey-text text-darken-4"><%= user.name.length <= 18 ? user.name : user.name.substr(0, 15) + '...' %></span>
                                 <% } %>
 
-                            <span class="role"><%= user.role %></span>
+                            <span class="role text-danger"><%= user.role %></span>
                         </div>
                         <div class="clear"></div>
                     </div>
                     <ul class="bar-body">
-                        <li class=""><a href="#!" class="collection-item grey-text text-darken-4">Редактировать профиль</a></li>
+                        <li class=""><a href="#!" class="collection-item grey-text text-muted">Редактировать профиль</a></li>
+                        <li class=""><a href="#!" class="collection-item grey-text text-darken-4">Изменить email</a></li>
                         <li class=""><a href="#!" class="collection-item grey-text text-darken-4">Изменить пароль</a></li>
-                        <li><a href="#!" class="collection-item grey-text text-darken-4">Ответы к тестам</a></li>
+                        <li><a href="#!" class="collection-item grey-text text-muted">Ответы к тестам</a></li>
                         <li><a href="#!" class="collection-item grey-text text-darken-4">Как пользоваться платформой</a></li>
                     </ul>
-                    <div class="bar-footer">
-                        <div class="clear">
-                        </div>
-                    </div>
                 </div>
-                <div class="d-flex justify-content-around mt-1">
-                    <a href="/" class="btn btn-primary text-white">В главное меню</a>
-                    <a href="/logout" class="btn btn-danger text-white">Выход</a>
+
+                <div class="user-bar-info mb-2">
+                    <h3 class="courses-header text-danger" >Мои данные</h3>
+
+                    <table class="content-table table-striped table">
+                        <thead>
+                        <tr>
+                            <td class="teal lighten-2 user-data-item">Имя</td><td><%= user.name %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="teal lighten-2 user-data-item">Фамилия</td><td><%= user.lastName %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="teal lighten-2 user-data-item">Email</td><td><%= user.email %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="teal lighten-2 user-data-item">Роль</td><td><%= user.role %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="teal lighten-2 user-data-item">Создан</td><td><%= new Date(user.createdAt).toLocaleString() %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="teal lighten-2 user-data-item">Изменен</td><td><%= new Date(user.updatedAt).toLocaleString() %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="teal lighten-2 user-data-item">Статус</td><td><%= user.status %></td>
+                        </tr>
+
+                        <tr>
+                            <td class="teal lighten-2 user-data-item">Тариф</td><td><%= user.tariff %></td>
+                        </tr>
+                        </thead>
+                    </table>
                 </div>
+
+                <div class="d-flex justify-content-between mb-4">
+                    <a href="/" class="btn btn-left btn-primary text-white">В главное меню</a>
+                    <a href="/logout" class="btn btn-right btn-danger text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Выход&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                </div>
+
             </div>
 
             <div class="col-sm-12 col-lg-8">
 
                 <div class="pb-5">
                     <div class="user-courses">
-                        <h3 class="courses-header">Мои оплаты</h3>
+                        <h3 class="courses-header">Мои курсы</h3>
                     </div>
                     <div class="courses-content">
-                        <table class="content-table table-striped table">
+                        <table class="content-table table-striped table table-hover">
                             <thead>
                             <tr>
                                 <th class="teal lighten-2">Имя курса</th>
@@ -72,6 +118,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <a href="/courses" type="button" class="btn btn-outline-primary btn-block text-primary">Добавить курс</a>
                 </div>
 
                 <div class="pb-5">
@@ -101,22 +148,8 @@
                             </tbody>
                         </table>
                     </div>
+                    <a href="/payment" type="button" class="btn btn-outline-primary btn-block text-primary">Оплатить</a>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             </div>
 

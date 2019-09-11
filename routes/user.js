@@ -13,6 +13,8 @@ router.get("/account", (req, res) => {
   let expirationDate = req.session.userExpirationDate;
   let courses = req.session.userCourses;
   let payments = req.session.userPayments;
+  let updatedAt = req.session.userUpdatedAt;
+  let createdAt = req.session.userCreatedAt;
 
   if (!id && !email) {
     res.redirect("/");
@@ -28,7 +30,9 @@ router.get("/account", (req, res) => {
         tariff,
         expirationDate,
         courses,
-        payments
+        payments,
+        updatedAt,
+        createdAt
       },
     });
   }

@@ -87,6 +87,8 @@ router.post("/reg", (req, res) => {
             expirationDate: "",
             commentAboutUser: "",
             courses: [],
+            updatedAt: Date.now(),
+            createdAt: Date.now()
           })
             .then(user => {
               /********************************************************************************************************/
@@ -101,6 +103,8 @@ router.post("/reg", (req, res) => {
               req.session.userExpirationDate = user.expirationDate;
               req.session.userCourses = user.courses;
               req.session.userPayments = user.payments;
+              req.session.userUpdatedAt = user.updatedAt;
+              req.session.userCreatedAt = user.createdAt;
               /********************************************************************************************************/
 
               res.json({
@@ -173,6 +177,7 @@ router.post("/login", (req, res) => {
                 fields: ["email", "password"],
               });
             } else {
+
               /********************************************************************************************************/
               req.session.userId = user.id;
               req.session.userEmail = user.email;
@@ -185,7 +190,10 @@ router.post("/login", (req, res) => {
               req.session.userExpirationDate = user.expirationDate;
               req.session.userCourses = user.courses;
               req.session.userPayments = user.payments;
+              req.session.userUpdatedAt = user.updatedAt;
+              req.session.userCreatedAt = user.createdAt;
               /********************************************************************************************************/
+
               res.json({
                 success: true,
               });

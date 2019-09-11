@@ -55,10 +55,16 @@ const UserSchema = new Schema(
       type: Array,
       require: false,
     },
-  },
 
-  {
-    timestamps: true,
+    updatedAt: {
+      type: Date,
+      require: true
+    },
+
+    createdAt: {
+      type: Date,
+      require: true
+    }
   }
 );
 
