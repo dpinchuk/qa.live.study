@@ -11,6 +11,7 @@ const mongoose = require("mongoose");
 const Courses = require("./models/courses");
 const Articles = require("./models/articles");
 const Payments = require("./models/payments");
+const User = require("./models/user");
 
 /*App Object*/
 const app = express();
@@ -20,6 +21,7 @@ let email;
 let courses;
 let articles;
 let payments;
+let user;
 
 /*Sessions*/
 app.use(
@@ -53,9 +55,15 @@ app.get("/", async (req, res) => {
 
   id = req.session.userId;
   email = req.session.userEmail;
+
   courses = await Courses.find({});
   articles = await Articles.find({});
   payments = await Payments.find({});
+  user = await User.find({email: email});
+
+  console.log(id);
+  console.log(email);
+  console.log(user);
 
   res.render("./main", {
     courses,
