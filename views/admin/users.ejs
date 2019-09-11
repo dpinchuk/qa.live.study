@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Title</title>
-  </head>
-  <body>
-    <ul>
-      <% users.forEach(function(user){ %>
-      <li>
-        <b><%= user.name %> <%= user.lastName %></b>
-        <br />
-        <%= user.status %>
-      </li>
-      <br />
-      <br />
-      <% }); %>
-    </ul>
-  </body>
-</html>
+<link rel="stylesheet" href="<%= assetFingerprint('/css/user/users.css') %>">
+
+<% include ../layouts/header.ejs %>
+<% include ../layouts/admin-layouts/layout-users.ejs %>
+
+<a href="#" title="Вернуться к началу" class="topbutton"><i class="arrow up"></i></a>
+
+<% include ../layouts/footer.ejs %>

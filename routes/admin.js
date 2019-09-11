@@ -4,8 +4,7 @@ const User = require("../models/user");
 
 router.get("/users", (req, res) => {
   User.find({}).then(users => {
-    res.render("admin/users", { users: users });
-
+    res.render("../views/admin/users", { users: users });
   });
 });
 
