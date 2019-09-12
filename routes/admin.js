@@ -24,4 +24,10 @@ router.get("/courses", (req, res) => {
   });
 });
 
+router.get("/properties", (req, res) => {
+  Courses.find({}).then(courses => {
+    res.render("../views/admin/properties");
+  });
+});
+
 module.exports = router;
