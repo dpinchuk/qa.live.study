@@ -1,0 +1,48 @@
+<div class="users">
+    <div class="container">
+        <% users.forEach((user) => { %>
+        <div class="user-item mb-3">
+            <div class="card">
+                <div class="card-header">
+                    <%= user.id %>
+                </div>
+                <div class="row">
+                    <div class="col-10">
+                        <div class="card-body">
+                            <h6 class="card-title">Имя: <%= user.name.length > 0 ? user.name : "None" %></h6>
+                            <h6 class="card-title">Фамилия: <%= user.lastName.length > 0 ? user.lastName : "None" %></h6>
+                            <h6 class="card-title">Email: <%= user.email %></h6>
+                            <h6 class="card-title">Роль: <%= user.role %></h6>
+                            <h6 class="card-title">Статус: <%= user.status %></h6>
+                            <h6 class="card-title">Тариф: <%= user.tariff.length > 0 ? user.tariff : "Not selected" %></h6>
+                            <h6 class="card-title">Создан: <%= user.createdAt %></h6>
+                            <h6 class="card-title">Редактирован: <%= user.updatedAt %></h6>
+                            <h6 class="card-title">
+                                <select class="selectpicker">Платежи пользователя
+                                    <option value="" disabled selected>Просмотреть</option>
+                                    <% user.payments.forEach(payment => { %>
+                                    <option><%= payment.paymentDate %></option>
+                                    <% }); %>
+                                </select>
+                                <label class="mdb-main-label"></label>
+                                <%= user.email %>
+                            </h6>
+
+
+
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <a href="#" class="btn btn-primary pb-1">Активировать</a>
+                        <a href="#" class="btn btn-warning pb-1">Заблокировать</a>
+                        <a href="#" class="btn btn-danger">Удалить</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>

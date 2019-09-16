@@ -44,6 +44,7 @@ app.use(
   "/js",
   express.static(path.join(__dirname, "node_modules", "jquery", "dist"))
 );
+
 app.use((req, res, next) => {
   delete req.body.__proto__;
   next();
@@ -63,10 +64,6 @@ app.get("/", async (req, res) => {
   articles = await Articles.find({});
   payments = await Payments.find({});
   user = await User.find({email: email});
-
-  console.log(id);
-  console.log(email);
-  console.log(user);
 
   res.render("./main", {
     courses,
