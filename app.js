@@ -62,13 +62,29 @@ app.get("/", async (req, res) => {
   courses = await Courses.find({});
   articles = await Articles.find({});
   payments = await Payments.find({});
-  user = await User.find({email: email});
-
-  console.log(id);
-  console.log(email);
-  console.log(user);
+  user = await User.find({ email: email });
 
   res.render("./main", {
+    courses,
+    articles,
+    payments,
+    user: {
+      id,
+      email,
+    },
+  });
+});
+
+app.get("/json", async (req, res) => {
+  id = req.session.userId;
+  email = req.session.userEmail;
+
+  courses = await Courses.find({});
+  articles = await Articles.find({});
+  payments = await Payments.find({});
+  user = await User.find({ email: email });
+
+  res.json({
     courses,
     articles,
     payments,
