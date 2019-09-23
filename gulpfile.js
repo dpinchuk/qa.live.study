@@ -1,25 +1,17 @@
 const gulp = require("gulp");
-const sass = require("gulp-sass");
+const path = require('path');
+const less = require("gulp-less");
+/*
 const autoprefixer = require("gulp-autoprefixer");
 const cssnano = require("gulp-cssnano");
-const plumber = require("gulp-plumber");
+const plumber = require("gulp-plumber"); */
 
-gulp.task("scss", () => {
+gulp.task("less", () => {
   return gulp
-    .src("dev/scss/**/*.scss")
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(
-      autoprefixer(["last 15 version", "> 1%", "ie 8", "ie 7"], {
-        cascade: true,
-      })
-    )
-    .pipe(cssnano())
-    .pipe(gulp.dest("public/css"));
+    .src("styles/**/*.less")
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(gulp.dest('./public/css'));
   // .pipe(browserSync.reload({stream: true}))
-});
-
-gulp.task("default", ["scss"], () => {
-  gulp.watch("dev/scss/**/*.scss", ["scss"]);
-  // gulp.watch('dist/*.html', browserSync.reload);
 });

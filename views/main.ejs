@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="<%= assetFingerprint('css/main.css') %>">
 <link rel="stylesheet" href="<%= assetFingerprint('css/support/button-up.css') %>">
 
 <% include layouts/header.ejs %>
@@ -13,10 +12,11 @@
 <% include layouts/section-rate.ejs %>
 <% include layouts/section-footer.ejs %>
 
-<a href="#" title="Вернуться к началу" class="topbutton"><i class="arrow up"></i></a>
+<button class="topbutton"><i class="fas fa-arrow-up"></i></button>
 
 <script src="<%= assetFingerprint('js/masonry.pkgd.min.js') %>"></script>
 <script src="<%= assetFingerprint('js/utils.js') %>"></script>
+<script src="<%= assetFingerprint('js/main.js') %>"></script>
 <script src="<%= assetFingerprint('js/section-tools.js') %>"></script>
 <script src="<%= assetFingerprint('js/section-events.js') %>"></script>
 
