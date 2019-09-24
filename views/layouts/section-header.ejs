@@ -1,8 +1,8 @@
 <header class="header fixed-top">
     <div class="container">
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-            <a class="navbar-brand item-transition" href="/"><img src="img/logo_50x50.png" class="" alt=""></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <a class="navbar-brand" href="/"><img src="img/logo_50x50.png" alt="company-logo"></a>
+            <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div id="navb" class="navbar-collapse collapse hide">
@@ -64,7 +64,7 @@
                         </div>
                     </li>
                 </ul>
-                    <ul class="nav navbar-nav ml-auto">
+                    <ul class="nav navbar-nav">
                         <% if (!user.id && !user.email) { %>
                         <li class="nav-item">
                             <a href="/reg" class="nav-link">Регистрация</a>

@@ -138,7 +138,7 @@ let showCourses = array => {
     document.getElementById("courses").innerHTML +=
       "<div class='courses-wide__row'>" +
       "   <div class='courses-wide__row-container'>" +
-      "       <div class='row valign-wrapper p-3 course-border border-primary'>" +
+      "       <div class='row valign-wrapper p-3 course-border'>" +
       "           <div class='col-sm-12 col-md-4 courses-wide__row-image'>" +
       "               <a href='#!' data-target='#demo'>" +
       "                   <img src='" +
