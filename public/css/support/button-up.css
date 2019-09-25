@@ -3,6 +3,8 @@ body {
 }
 
 .topbutton {
+  opacity: 0;
+  visibility: hidden;
   width: 54px;
   height: 54px;
   border: 2px solid #737d9b;
@@ -16,6 +18,8 @@ body {
   cursor: pointer;
   color: #A1A8BD;
   font-size: 16px;
+  -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms;
 }
 
 .topbutton:hover {
@@ -34,7 +38,16 @@ body {
  margin-right: 0 !important;
 }
 
+.topbutton:focus {
+  outline: none;
+}
+
 .up {
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
 }
