@@ -1,3 +1,6 @@
+.section-statistics {
+  background-image: linear-gradient(to bottom right, #3ae2ce, blue);
+}
 .statistics-item {
   display: flex;
   line-height: 1;

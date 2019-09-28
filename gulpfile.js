@@ -8,7 +8,7 @@ const plumber = require("gulp-plumber"); */
 
 gulp.task("less", () => {
   return gulp
-    .src("styles/**/*.less")
+    .src("styles/**/style.less")
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))

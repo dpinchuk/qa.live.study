@@ -74,31 +74,13 @@
 } */
 
 
-.section-advantages {
-  background-color: #f8f8f8;
-}
+
 
 .shadow {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
 }
 
-.section-advantages__best-title {
-  text-align: center;
-  line-height: 25px;
-  font-size: 25px;
-  font-weight: bold;
-  color: #ffffff;
-  letter-spacing: 1px;
-}
-
-.section-advantages__best-description {
-  font-size: 15px;
-  margin-top: 15px;
-  color: #ffffff;
-  line-height: 2;
-  font-weight: 500;
-}
 
 .footer-item__title {
   font-size: 15px;
@@ -189,10 +171,6 @@ ul.socialIcons {
   box-shadow: 0 0 5px #5181b8;
 }
 
-.section-courses {
-  background-color: #ffffff;
-}
-
 .courses-wide__row {
   margin-bottom: 25px;
   padding: 0 15px;
@@ -210,13 +188,7 @@ ul.socialIcons {
 }
 
 .courses-wide__row-image {
-  width: 33.3333333333%;
-  margin-left: auto;
-  left: auto;
-  right: auto;
-  text-align: center;
-  background-image: linear-gradient(to bottom right, white, #cdf6ff);
-  /*background-color: #ffc107;*/
+
 }
 
 .courses-wide__row-title {
@@ -452,7 +424,7 @@ i {
 
 @media screen and (max-width: 980px) {
 
-  .section-advantages__best-description {
+/*   .section-advantages__best-description {
     font-size: 25px;
   }
   .section-home-top__text {
@@ -467,7 +439,7 @@ i {
   .section-advantages__best.shadow {
     box-shadow: none;
   }
-
+ */
   .courses-wide__row-btn {
     display: flex;
     flex-direction: column;
@@ -480,16 +452,6 @@ i {
     font-size: 20px;
     font-weight: 700;
     padding: 6px 10px;
-  }
-
-  .course-item {
-    display: flex;
-    flex-direction: column;
-
-  }
-  .courses-wide__row-image {
-      width: 50%;
-      margin: 0;
   }
 
  .courses-wide__row {
@@ -525,6 +487,7 @@ i {
   }
   .company-logo-big {
     margin: 0 auto;
+    width: auto;
   }
   .section-home__company-statistic {
     flex-direction: column;
