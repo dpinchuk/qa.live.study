@@ -1,0 +1,28 @@
+.section-statistics {
+  background-image: linear-gradient(to bottom right, #3ae2ce, blue);
+}
+
+.statistics {
+  &-item {
+    display: flex;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: #ffffff;
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+      3px 3px 15px rgba(0, 0, 0, 0.5);
+  }
+  &-count {
+    display: block;
+    font-size: 85px;
+    font-weight: bold;
+  }
+  &-description {
+    display: block;
+    font-size: 35px;
+    line-height: 1.2;
+    text-align: left;
+    margin-left: 15px;
+  }
+}

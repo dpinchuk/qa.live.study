@@ -1,3 +1,21 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+.valign-wrapper {
+  display: flex;
+  align-items: center;
+}
+.btn:hover {
+  cursor: pointer;
+}
+.right-align {
+  text-align: right;
+}
+.item-transition {
+  transition: all 1s ease;
+  cursor: pointer !important;
+}
+.item-transition:hover {
+  -webkit-filter: brightness(120%);
+  -webkit-transform: scale(1.1);
+}

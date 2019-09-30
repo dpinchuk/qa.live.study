@@ -16,6 +16,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
   "devDependencies": {
     "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",

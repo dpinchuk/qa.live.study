@@ -1,0 +1,36 @@
+.course {
+
+
+&-item {
+ /*  .tablet({
+    display: flex;
+    flex-direction: column;
+  }); */
+  img {
+    height: 100px;
+  }
+}
+ &-image {
+  width: 33.3%;
+  background-image: linear-gradient(to bottom right, white, #cdf6ff);
+  /*background-color: #ffc107;*/
+  .mobile({
+    width: 50%;
+    margin: 0;
+  })
+ }
+
+ &-actions {
+  .mobile({
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  });
+  .tablet({
+      width: 100%;
+  })
+
+ }
+
+}
