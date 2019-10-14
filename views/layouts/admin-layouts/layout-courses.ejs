@@ -1,0 +1,29 @@
+<div class="courses">
+    <div class="container">
+        <% courses.forEach((course) => { %>
+            <div class="course-item mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        <%= course.id %>
+                    </div>
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="card-body">
+                                <h6 class="card-title">Наименование курса: <%= course.name %></h6>
+                                <h6 class="card-title">Количество сессий: <%= course.sessionCount %></h6>
+                                <h6 class="card-title">Статус: <%= course.status %></h6>
+                                <h6 class="card-title">Описание курса: <%= course.summary %></h6>
+                            </div>
+                        </div>
+
+                        <div class="col-2">
+                            <a href="#" class="btn btn-primary pb-1">Активировать</a>
+                            <a href="#" class="btn btn-warning pb-1">Заблокировать</a>
+                            <a href="#" class="btn btn-danger">Удалить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>

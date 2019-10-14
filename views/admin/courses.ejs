@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="<%= assetFingerprint('/css/user/user-account.css') %>">
 <link rel="stylesheet" href="<%= assetFingerprint('/css/support/button-up.css') %>">
+<link rel="stylesheet" href="<%= assetFingerprint('/css/courses/courses.css') %>">
 
-<% include layouts/header.ejs %>
-<% include layouts/layout-user-account.ejs %>
+<% include ../layouts/header.ejs %>
+<% include ../layouts/admin-layouts/layout-courses.ejs %>
 
 <button class="topbutton"><i class="fas fa-arrow-up"></i></button>
 
-<% include layouts/footer.ejs %>
+<% include ../layouts/footer.ejs %>
 
 <script src="<%= assetFingerprint('/js/backtotop.js') %>"></script>

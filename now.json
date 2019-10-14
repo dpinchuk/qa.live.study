@@ -7,7 +7,12 @@
     },
     {
       "src": "*.js",
-      "use": "@now/node-server"
+      "use": "@now/node-server",
+      "config": {
+        "includeFiles": [
+          "public/**"
+        ]
+      }
     }
   ],
   "routes": [
