@@ -1,5 +1,11 @@
 body {
-	font-family: 'Open Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  color: @textColor;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .valign-wrapper {
@@ -15,8 +21,6 @@ body {
   text-align: right;
 }
 
-
-
 .item-transition {
   transition: all 1s ease;
   cursor: pointer !important;
@@ -25,4 +29,9 @@ body {
 .item-transition:hover {
   -webkit-filter: brightness(120%);
   -webkit-transform: scale(1.1);
+}
+
+i {
+  font-family: "FontAwesome";
+  font-style: normal;
 }

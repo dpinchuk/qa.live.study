@@ -1,0 +1,34 @@
+.login {
+  &-page {
+    height: 100vh;
+    .mobile({
+      padding-top: 36px;
+    });
+    .card {
+      .mobile({
+        border: 0;
+        height: 100%;
+        width: 90vw;
+      });
+    }
+  }
+  &-form {
+    .custom-control {
+      line-height: 1.6;
+    }
+    .mobile({
+      padding: 8px;
+      margin-bottom: 8px;
+    });
+  }
+  &-footer {
+    .mobile({
+      flex-direction: column;
+      margin-top: 8px;
+
+      & a {
+        margin-bottom: 16px;
+      }
+    });
+  }
+}

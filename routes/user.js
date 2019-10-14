@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/account", (req, res) => {
-
   let id = req.session.userId;
   let name = req.session.userName;
   let lastName = req.session.userLastName;
@@ -32,7 +31,7 @@ router.get("/account", (req, res) => {
         courses,
         payments,
         updatedAt,
-        createdAt
+        createdAt,
       },
     });
   }

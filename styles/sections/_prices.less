@@ -1,0 +1,44 @@
+
+.price-block {
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &-plan {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    font-size: 25px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &-price {
+    padding: 15px;
+    text-align: center;
+  }
+
+  &-quantity {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  &-currency {
+    font-size: 20px;
+  }
+
+  &-description {
+    background-color: @baseWhite;
+    padding: 15px !important;
+    border-bottom: 1px solid #e0e0e0;
+
+    li {
+      padding: 10px 0;
+    }
+  }
+}
