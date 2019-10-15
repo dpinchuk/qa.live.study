@@ -133,6 +133,9 @@ i {
   text-decoration: none;
   color: #fff;
 }
+.scroll-to-top-btn:focus {
+  outline: none;
+}
 .scroll-to-top-btn i {
   font-family: "FontAwesome";
   font-style: normal;
