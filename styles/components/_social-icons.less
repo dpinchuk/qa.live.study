@@ -1,0 +1,63 @@
+.social-icons {
+  padding: 0;
+  text-align: center;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin: 15px;
+    border-radius: 2em;
+    overflow: hidden;
+
+    &:hover a {
+      max-width: 200px;
+      padding-right: 1em;
+    }
+
+    &.facebook {
+      background: #3b5998;
+      box-shadow: 0 0 5px #3b5998;
+    }
+
+    &.twitter {
+      background: #00aced;
+      box-shadow: 0 0 5px #00aced;
+    }
+
+    &.instagram {
+      background: #cd486b;
+      box-shadow: 0 0 5px #cd486b;
+    }
+    &.skype {
+      background: #00a5e7;
+      box-shadow: 0 0 5px #00a5e7;
+    }
+
+    &.linkedin {
+      background: #157eb8;
+      box-shadow: 0 0 5px #157eb8;
+    }
+
+    &.vk {
+      background: #5181b8;
+      box-shadow: 0 0 5px #5181b8;
+    }
+
+    a {
+      display: block;
+      padding: 0.5em;
+      max-width: 2.3em;
+      min-width: 2.3em;
+      height: 2.3em;
+      white-space: nowrap;
+      line-height: 1.5em;
+      transition: 0.5s;
+      text-decoration: none;
+      color: @baseWhite;
+    }
+
+    i {
+      margin-right: 0.5em;
+    }
+  }
+}

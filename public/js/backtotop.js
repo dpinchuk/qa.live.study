@@ -1,6 +1,6 @@
 $(document).ready(function() {
   
-  var btn = $('.topbutton');
+  var btn = $('.scroll-to-top-btn');
 
   $(window).scroll(function() {
     if ($(window).scrollTop() > 300) {

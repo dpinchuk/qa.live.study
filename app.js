@@ -63,7 +63,7 @@ app.get("/", async (req, res) => {
   courses = await Courses.find({});
   articles = await Articles.find({});
   payments = await Payments.find({});
-  user = await User.find({email: email});
+  user = await User.find({ email: email });
 
   res.render("./main", {
     courses,
@@ -81,11 +81,11 @@ app.use("/admin", routes.admin);
 
 app.use("/", routes.sign);
 
-app.get("/reg", (req, res) => {
+app.get("/registration", (req, res) => {
   id = req.session.userId;
   email = req.session.userEmail;
   if (!id && !email) {
-    res.render("./reg");
+    res.render("./registration");
   } else {
     res.redirect("/user/account");
   }

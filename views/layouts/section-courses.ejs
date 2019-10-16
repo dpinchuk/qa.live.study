@@ -1,4 +1,4 @@
-<section class="bg-white pt-5 pb-5">
+<section class="bg-white pt-5">
     <div class="container">
         <div class="row">
             <div class="col s12 text-center">
@@ -10,7 +10,7 @@
                 <% let i = 0 %>
                 <% courses.forEach(course => { %>
                     <div class="border rounded p-3 mb-4 text-center">
-                            <div class="row align-items-center course-item col-lg-4">
+                            <div class="row align-items-center course-item">
                                     <a href="#!" data-target="#demo" class="course-image ">
                                         <img src="<%= course.imgUrl %>" alt="">
                                     </a>
@@ -23,10 +23,10 @@
                                         <button type="button" class="btn btn-primary collapsed" data-toggle="collapse" data-target="#demo<%= i %>" aria-expanded="false">О курсе</button>
                                     </div>
                                     <div class="gdlr-course-button">
-                                        <a href="/login" class="btn btn-courses">Подписаться</a>
+                                        <a href="/login" class="btn btn-outline-primary">Подписаться</a>
                                     </div>
                                 </div>
-                                <div id="demo<%= i %>" class="course-details collapse" style="">
+                                <div id="demo<%= i %>" class="course-details collapse">
                                     <p><%= course.summary %></p>
                                     <a href="<%= course.courseRedirectClickOnDetails %>" class="course-details-link">детальнее&gt;</a>
                                 </div>

@@ -1,5 +1,11 @@
+(function(){
+   const loginBtn = document.getElementById('loginBtn');
+
+})();
+
+
 $(() => {
-  let flag = true;
+
   //login
   $(".login-button").on("click", e => {
     e.preventDefault();

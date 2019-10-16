@@ -88,7 +88,7 @@ router.post("/reg", (req, res) => {
             commentAboutUser: "",
             courses: [],
             updatedAt: Date.now(),
-            createdAt: Date.now()
+            createdAt: Date.now(),
           })
             .then(user => {
               /********************************************************************************************************/
@@ -177,7 +177,6 @@ router.post("/login", (req, res) => {
                 fields: ["email", "password"],
               });
             } else {
-
               /********************************************************************************************************/
               req.session.userId = user.id;
               req.session.userEmail = user.email;

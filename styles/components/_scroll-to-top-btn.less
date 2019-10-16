@@ -1,0 +1,34 @@
+.scroll-to-top-btn {
+  width: 54px;
+  height: 54px;
+  border: none;
+  border-radius: 50%;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 35px;
+  right: 45px;
+  cursor: pointer;
+  color: @baseWhite;
+  font-size: 16px;
+  background-color: #0062cc;
+
+  &:hover {
+    text-decoration: none;
+    color: @baseWhite;
+  }
+
+  i {
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-size: 29px;
+    position: relative;
+    bottom: 4px;
+    margin-right: 0 !important;
+  }
+
+  &.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+}

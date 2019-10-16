@@ -21,24 +21,12 @@
   display: block !important;
 }
 
-/*TODO*/
-.header-navbar {
-  /*position: fixed;*/
-  /*bottom: 0;*/
-  /*width: 100%;*/
-}
-
 .nav-item__user {
   align-self: center;
 }
 
 .user-data {
   display: inline;
-}
-
-
-.section-start {
-  /*background-image: linear-gradient(to bottom right, white , lightblue);*/
 }
 
 .section-start-text {
@@ -49,31 +37,6 @@
   background-image: linear-gradient(to bottom right, #3ae2ce, blue);
   /*background-color: #53ceff;*/
 }
-
-
-/* .section-home__company-statistic {
-  display: flex;
-  line-height: 1;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
-    3px 3px 15px rgba(0, 0, 0, 0.5);
-} */
-
-/* .section-home__company-statistic-count {
-  font-size: 85px;
-  font-weight: bold;
-} */
-
-/* .section-home__company-statistic-description {
-  font-size: 35px;
-  line-height: 1.2;
-  text-align: left;
-  margin-left: 15px;
-} */
-
-
 
 
 .shadow {
@@ -104,73 +67,6 @@
   font-size: 12px;
 }
 
-ul.socialIcons {
-  padding: 0;
-  text-align: center;
-}
-
-.socialIcons li {
-  background: yellow;
-  list-style: none;
-  display: inline-block;
-  margin: 15px;
-  border-radius: 2em;
-  overflow: hidden;
-}
-
-.socialIcons li a {
-  display: block;
-  padding: 0.5em;
-  max-width: 2.3em;
-  min-width: 2.3em;
-  height: 2.3em;
-  white-space: nowrap;
-  line-height: 1.5em;
-  transition: 0.5s;
-  text-decoration: none;
-  font-family: arial;
-  color: #fff;
-}
-
-.socialIcons li i {
-  margin-right: 0.5em;
-}
-
-.socialIcons li:hover a {
-  max-width: 200px;
-  padding-right: 1em;
-}
-
-.socialIcons .facebook {
-  background: #3b5998;
-  box-shadow: 0 0 5px #3b5998;
-}
-
-.socialIcons .twitter {
-  background: #00aced;
-  box-shadow: 0 0 5px #00aced;
-}
-
-.socialIcons .instagram {
-  background: #cd486b;
-  box-shadow: 0 0 5px #cd486b;
-}
-
-.socialIcons .skype {
-  background: #00a5e7;
-  box-shadow: 0 0 5px #00a5e7;
-}
-
-.socialIcons .linkedin {
-  background: #157eb8;
-  box-shadow: 0 0 5px #157eb8;
-}
-
-.socialIcons .vk {
-  background: #5181b8;
-  box-shadow: 0 0 5px #5181b8;
-}
-
 .courses-wide__row {
   margin-bottom: 25px;
   padding: 0 15px;
@@ -185,10 +81,6 @@ ul.socialIcons {
   background-color: #ffffff;
   transition: all 0.5s;
   cursor: pointer;
-}
-
-.courses-wide__row-image {
-
 }
 
 .courses-wide__row-title {
@@ -281,9 +173,6 @@ ul.socialIcons {
   justify-content: center;
 }
 
-.section-tools {
-  /*background-image: linear-gradient(to bottom right, #a1f1e7, #3ae2ce);*/
-}
 
 .tools-img {
   background-image: linear-gradient(to bottom right, #ffffff, #cdf6ff);
@@ -332,74 +221,6 @@ ul.socialIcons {
   text-align: center;
 }
 
-.z-depth-3 {
-  webkit-box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
-    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
-    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-}
-
-.price-block {
-  cursor: pointer;
-}
-
-.price-block:hover {
-  transform: translateY(-5px);
-}
-
-.price-block__header {
-  color: #ffffff;
-  background-image: linear-gradient(to bottom right, #3ae2ce, blue);
-}
-
-.price-block__plan {
-  background: rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  font-size: 20px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.price-block__price {
-  padding: 15px;
-  text-align: center;
-}
-
-.price-block__quantity {
-  font-size: 50px;
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-.price-block__currency {
-  font-size: 20px;
-}
-
-.price-block__description {
-  background-color: #ffffff;
-  padding: 15px !important;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-.price-block__description-item {
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
-}
-
-i {
-  margin-right: 10px !important;
-}
-
-.price-block__footer {
-  background-color: #ffffff;
-  padding: 15px;
-  text-align: center;
-}
-
-.section-quick-reg-login {
-}
-
 .quick-reg__item {
   border: 1px solid #000000;
   padding: 10px;
@@ -421,25 +242,6 @@ i {
   line-height: 2;
 }
 
-
-@media screen and (max-width: 980px) {
-
-/*   .section-advantages__best-description {
-    font-size: 25px;
-  }
-  .section-home-top__text {
-    font-size: 40px;
-  }
-  .section-home-top__links {
-    flex-direction: column;
-    align-items: center;
-    height: 140px
-  }
-
-  .section-advantages__best.shadow {
-    box-shadow: none;
-  }
- */
   .courses-wide__row-btn {
     display: flex;
     flex-direction: column;

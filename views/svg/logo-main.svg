@@ -1,40 +1,8 @@
-<section class="bg-primary pb-5 pt-5 text-center text-light">
-    <div class="container">
-        <div class="row pb-5">
-            <div class="col col-sm-12 col-md-12 col-lg-12">
-                <h3 class="section-title text-white">Информация о платформе</h3>
-            </div>
-        </div>
-        <div class="row valign-wrapper">
-            <div class="col col-sm-12 col-md-12 col-lg-4">
-                <div class="col col-sm-12 col-md-12 col-lg-12 mb-5">
-                    <div class="statistics-item">
-                        <span class="statistics-count">
-                            3
-                        </span>
-                        <span class="statistics-description">
-                            года<br> на рынке
-                        </span>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-5">
-                    <div class="statistics-item">
-                        <span class="statistics-count">
-                            100+
-                        </span>
-                        <span class="statistics-description">
-                           учащихся
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-4">
-                <a href="/" class="company-logo-big">
-                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                    width="300" height="300" viewBox="0 0 500.000000 500.000000"
+ <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 500.000000 500.000000"
                     preserveAspectRatio="xMidYMid meet">
                    <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
-                   fill="#FFFFFF" stroke="none">
+                   fill="#007bff" stroke="none">
                    <path d="M1430 4712 c-69 -7 -149 -18 -178 -24 -30 -6 -68 -12 -87 -12 -18 -1
                    -31 -4 -29 -8 5 -8 -53 -21 -65 -14 -5 3 -11 0 -14 -7 -2 -6 -22 -18 -43 -26
                    -21 -8 -55 -21 -74 -29 -19 -9 -37 -16 -40 -17 -3 0 -16 -7 -30 -16 -80 -49
@@ -120,42 +88,3 @@
                    <path d="M1920 595 l0 -75 75 0 75 0 0 75 0 75 -75 0 -75 0 0 -75z" fill="#dc3545"/>
                    </g>
                    </svg>
-                </a>
-            </div>
-            <div class="col col-sm-12 col-md-12 col-lg-4 valid-wrapper">
-                <div class="col col-sm-12 col-md-12 col-lg-12 mb-5">
-                    <div class="statistics-item">
-                        <span class="statistics-count">
-                            6
-                        </span>
-                        <span class="statistics-description">
-                            онлайн<br> курсов
-                        </span>
-                    </div>
-                </div>
-                <div class="col col-sm-12 col-md-12 col-lg-12 mb-5">
-                    <div class="statistics-item">
-                        <span class="statistics-count">
-                            3
-                        </span>
-                        <span class="statistics-description">
-                            потока<br> курсов
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="statistics-item">
-                    <span class="statistics-count">
-                        77%
-                    </span>
-                    <span class="statistics-description">
-                        трудоустроенных<br> учащихся
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
