@@ -24,45 +24,54 @@ const UserSchema = new Schema({
   role: {
     type: String,
     require: true,
+    default: "student",
   },
 
   status: {
     type: String,
     require: true,
+    default: "active",
   },
 
   tariff: {
     type: String,
     require: true,
+    default: "not selected",
   },
 
   payments: {
     type: Array,
     require: false,
+    default: [],
   },
   expirationPaidDate: {
     type: Date,
     require: false,
+    default: "",
   },
 
   commentAboutUser: {
     type: String,
     require: false,
+    default: "",
   },
 
   courses: {
     type: Array,
     require: false,
+    default: [],
   },
 
   updatedAt: {
     type: Date,
     require: true,
+    default: Date.now(),
   },
 
   createdAt: {
     type: Date,
     require: true,
+    default: Date.now(),
   },
 });
 

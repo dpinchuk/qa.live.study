@@ -1,5 +1,5 @@
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   min-height: 100vh;
   color: #0a1331;
 }
@@ -154,7 +154,7 @@ i {
 }
 .section-title {
   font-size: 30px;
-  color: #0A1331;
+  color: #0a1331;
   margin-bottom: 35px;
   font-weight: 600;
   cursor: default;
@@ -278,10 +278,10 @@ i {
 .price-block {
   cursor: pointer;
   border-radius: 8px;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .price-block:hover {
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 .price-block-plan {
   background: rgba(0, 0, 0, 0.2);
