@@ -33,10 +33,7 @@ app.use(staticAsset(path.join(__dirname, "/public")));
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(
-  "/js",
-  express.static(path.join(__dirname, "node_modules", "jquery", "dist"))
-);
+app.use("/js", express.static(path.join(__dirname, "node_modules", "jquery", "dist")));
 
 app.use((req, res, next) => {
   delete req.body.__proto__;
@@ -98,18 +95,14 @@ app.get("/help", (req, res) => {
   res.render("./help");
 });
 
+app.get("/courses/manual-qa", (req, res) => {
+  res.render("../views/courses/manual-qa");
+});
+
 //404
 app.use((req, res) => {
   res.render("./404");
 });
 
-// app.use((req, res, next) => {
-//   res.status(500).json({ err: "500" });
-// });
-
-// app.use((err, req, res, next) => {
-//   console.log(err.stack);
-//   res.status(404).json({ err: "404" });
-// });
 
 module.exports = app;
