@@ -1,38 +1,18 @@
 const express = require("express");
 const router = express.Router();
+const User = require("../models/user");
 
-router.get("/account", (req, res) => {
-  let id = req.session.userId;
-  let name = req.session.userName;
-  let lastName = req.session.userLastName;
-  let email = req.session.userEmail;
-  let role = req.session.userRole;
-  let status = req.session.userStatus;
-  let tariff = req.session.userTariff;
-  let expirationDate = req.session.userExpirationDate;
-  let courses = req.session.userCourses;
-  let payments = req.session.userPayments;
-  let updatedAt = req.session.userUpdatedAt;
-  let createdAt = req.session.userCreatedAt;
+let user;
 
-  if (!id && !email) {
+router.get("/account", async (req, res) => {
+  let { userId } = req.session;
+
+  if (!userId) {
     res.redirect("/");
   } else {
+    user = await User.findOne({ _id: userId }, { password: 0 }).exec();
     res.render("./user-account", {
-      user: {
-        id,
-        name,
-        lastName,
-        email,
-        role,
-        status,
-        tariff,
-        expirationDate,
-        courses,
-        payments,
-        updatedAt,
-        createdAt,
-      },
+      user,
     });
   }
 });
