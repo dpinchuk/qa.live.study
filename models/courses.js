@@ -34,6 +34,10 @@ const CourseSchema = new Schema(
       status: {
         type: String,
         require: true,
+      },
+      courseRedirectClickOnDetails: {
+        type: String,
+        require: true,
       }
     },
 
