@@ -1,8 +1,8 @@
-$(document).ready(function() {
+$(document).ready(() => {
   
-  var btn = $('.scroll-to-top-btn');
+  let btn = $('.scroll-to-top-btn');
 
-  $(window).scroll(function() {
+  $(window).scroll(() => {
     if ($(window).scrollTop() > 300) {
       btn.addClass('show');
     } else {
@@ -10,7 +10,7 @@ $(document).ready(function() {
     }
   });
 
-  btn.on('click', function(e) {
+  btn.on('click', (e) => {
     e.preventDefault();
     $('html, body').animate({scrollTop:0}, '300');
   });

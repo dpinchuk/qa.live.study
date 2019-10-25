@@ -35,6 +35,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/js", express.static(path.join(__dirname, "node_modules", "jquery", "dist")));
 
+app.locals.getScripts = function(req, res) {
+  return app.locals.scripts;
+};
+
 app.use((req, res, next) => {
   delete req.body.__proto__;
   next();
@@ -66,7 +70,6 @@ app.get("/", async (req, res) => {
 
 app.use("/user", routes.user);
 app.use("/admin", routes.admin);
-
 app.use("/", routes.sign);
 
 app.get("/registration", (req, res) => {
@@ -95,14 +98,14 @@ app.get("/help", (req, res) => {
   res.render("./help");
 });
 
+/* Курсы */
 app.get("/courses/manual-qa", (req, res) => {
-  res.render("../views/courses/manual-qa");
+  res.render("../views/layouts/courses_lessons/manual-qa");
 });
 
 //404
 app.use((req, res) => {
   res.render("./404");
 });
-
 
 module.exports = app;
