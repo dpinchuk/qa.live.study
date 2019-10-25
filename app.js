@@ -99,9 +99,21 @@ app.get("/help", (req, res) => {
 });
 
 /* Курсы */
+// manual-qa
 app.get("/courses/manual-qa", (req, res) => {
-  res.render("../views/layouts/courses_lessons/manual-qa");
+  let courseManualQA = require("./json/courses_lessons/manual-qa.json");
+  res.render("../views/layouts/courses_lessons/manual-qa", {courseManualQA: courseManualQA});
 });
+
+//java-qa
+app.get("/courses/java-qa", (req, res) => {
+  let courseJavaQA = require("./json/courses_lessons/java-qa.json");
+  res.render("../views/layouts/courses_lessons/java-qa", {courseJavaQA: courseJavaQA});
+});
+
+
+
+
 
 //404
 app.use((req, res) => {

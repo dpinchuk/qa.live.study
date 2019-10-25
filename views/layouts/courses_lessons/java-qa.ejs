@@ -2,15 +2,19 @@
 
   <section class="section-manual">
     <div class="container">
-      <h1 class="section-header pt-4 pb-4 text-center">Мануальное тестирование ПО</h1>
+      <h1 class="section-header pt-5 pb-5 text-center">
+        Курс по Java для тестировщиков
+      </h1>
+
       <div class="text-center pb-5 d-flex justify-content-around">
-        <a href="/" class="btn btn-outline-primary">Главная</a>
-        <a href="/reg" class="btn btn-outline-warning">Регистрация</a>
-        <a href="/login" class="btn btn-outline-success">Вход</a>
+        <a href="/" class="btn btn-outline-primary">На главную</a>
+        <a href="/reg" class="btn btn-outline-warning d-table">Зарегистрироваться</a>
+        <a href="/login" class="btn btn-outline-success">Войти в аккаунт</a>
       </div>
+
       <div class="row">
         <div class="col-md-8 col-sm-12  mb-5 text-center border course-logo">
-          <img src="/img/section-courses/manual-course.png" class="logo-img" alt="" />
+          <img src="/img/section-courses/java-qa-course.png" class="logo-img" alt="" />
         </div>
 
         <div class="col-md-4 col-sm-12 mb-5">
@@ -32,7 +36,7 @@
               </div>
               <div class="gdlr-lms-info">
                 <span class="head">Обучается студентов:&nbsp;&nbsp;&nbsp;</span>
-                <span class="tail"> 25</span>
+                <span class="tail"> 11</span>
               </div>
               <div class="gdlr-lms-rating-wrapper">
                 <i class="fa fa-star icon-star"></i>
@@ -50,30 +54,30 @@
         </div>
       </div>
 
-      <% courseManualQA.forEach(lesson => { %>
-      <div class="row pb-5">
+      <% courseJavaQA.forEach(lesson => { %>
+        <div class="row pb-5">
           <div class="col-12">
-              <div class="course-program-wrapper">
-                  <div class="row cursor-pointer">
-                      <div class="col-12 course-program-item">
-                          <i class="fa fa-graduation-cap circle mr-1"></i>
-                          <div class="pl-0">
-                              <div class="font-bold">
-                                  <span class="title"><%= lesson.lessonName %></span>
-                              </div>
+            <div class="course-program-wrapper">
+              <div class="row cursor-pointer">
+                <div class="col-12 course-program-item">
+                  <i class="fa fa-graduation-cap circle mr-1"></i>
+                  <div class="pl-0">
+                    <div class="font-bold">
+                      <span class="title"><%= lesson.lessonName %></span>
+                    </div>
 
-                              <% lesson.lections.forEach(lection => { %>
-                                  <p class="mb-0">
-                                      <i class="fa fa-code"></i><span><%= lection %></span>
-                                  </p>
-                              <% }) %>
+                    <% lesson.lections.forEach(lection => { %>
+                      <p class="mb-0">
+                        <i class="fa fa-code"></i><span><%= lection %></span>
+                      </p>
+                    <% }) %>
 
-                          </div>
-                      </div>
                   </div>
+                </div>
               </div>
+            </div>
           </div>
-      </div>
+        </div>
       <% }) %>
 
     </div>
