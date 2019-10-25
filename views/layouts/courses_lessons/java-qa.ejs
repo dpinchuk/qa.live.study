@@ -1,0 +1,86 @@
+<% include header_courses_lessons.ejs %>
+
+  <section class="section-manual">
+    <div class="container">
+      <h1 class="section-header pt-5 pb-5 text-center">
+        Курс по Java для тестировщиков
+      </h1>
+
+      <div class="text-center pb-5 d-flex justify-content-around">
+        <a href="/" class="btn btn-outline-primary">На главную</a>
+        <a href="/reg" class="btn btn-outline-warning d-table">Зарегистрироваться</a>
+        <a href="/login" class="btn btn-outline-success">Войти в аккаунт</a>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 col-sm-12  mb-5 text-center border course-logo">
+          <img src="/img/section-courses/java-qa-course.png" class="logo-img" alt="" />
+        </div>
+
+        <div class="col-md-4 col-sm-12 mb-5">
+          <!-- Card -->
+          <div class="course-about">
+            <!-- Card image -->
+            <div class="gdlr-lms-course-info-inner-wrapper">
+              <img class="mb-4 card-img-top rounded-circle" data-holder-rendered="true"
+                src="/img/courses-pages/author/pinchuk_da.jpg" alt="Author photo" />
+            </div>
+            <div class="course-info">
+              <div class="gdlr-lms-info">
+                <span class="head">Преподаватель:&nbsp;&nbsp;&nbsp;</span>
+                <span class="tail"> Дмитрий Пинчук</span>
+              </div>
+              <div class="gdlr-lms-info">
+                <span class="head">Тип:&nbsp;&nbsp;&nbsp;</span>
+                <span class="tail"> Онлайн-курс</span>
+              </div>
+              <div class="gdlr-lms-info">
+                <span class="head">Обучается студентов:&nbsp;&nbsp;&nbsp;</span>
+                <span class="tail"> 11</span>
+              </div>
+              <div class="gdlr-lms-rating-wrapper">
+                <i class="fa fa-star icon-star"></i>
+                <i class="fa fa-star icon-star"></i>
+                <i class="fa fa-star icon-star"></i>
+                <i class="fa fa-star icon-star"></i>
+                <i class="fa fa-star icon-star"></i>
+                <span class="gdlr-lms-rating-amount">(1 Рейтинги)</span>
+              </div>
+            </div>
+            <div class="course-button">
+              <a href="/login" class="btn btn-primary text-uppercase">подписаться</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% courseJavaQA.forEach(lesson => { %>
+        <div class="row pb-5">
+          <div class="col-12">
+            <div class="course-program-wrapper">
+              <div class="row cursor-pointer">
+                <div class="col-12 course-program-item">
+                  <i class="fa fa-graduation-cap circle mr-1"></i>
+                  <div class="pl-0">
+                    <div class="font-bold">
+                      <span class="title"><%= lesson.lessonName %></span>
+                    </div>
+
+                    <% lesson.lections.forEach(lection => { %>
+                      <p class="mb-0">
+                        <i class="fa fa-code"></i><span><%= lection %></span>
+                      </p>
+                    <% }) %>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+
+    </div>
+  </section>
+
+<% include footer_courses_lessons.ejs %>

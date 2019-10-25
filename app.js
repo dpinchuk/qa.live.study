@@ -35,6 +35,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/js", express.static(path.join(__dirname, "node_modules", "jquery", "dist")));
 
+app.locals.getScripts = function(req, res) {
+  return app.locals.scripts;
+};
+
 app.use((req, res, next) => {
   delete req.body.__proto__;
   next();
@@ -66,7 +70,6 @@ app.get("/", async (req, res) => {
 
 app.use("/user", routes.user);
 app.use("/admin", routes.admin);
-
 app.use("/", routes.sign);
 
 app.get("/registration", (req, res) => {
@@ -95,14 +98,26 @@ app.get("/help", (req, res) => {
   res.render("./help");
 });
 
+/* Курсы */
+// manual-qa
 app.get("/courses/manual-qa", (req, res) => {
-  res.render("../views/courses/manual-qa");
+  let courseManualQA = require("./json/courses_lessons/manual-qa.json");
+  res.render("../views/layouts/courses_lessons/manual-qa", {courseManualQA: courseManualQA});
 });
+
+//java-qa
+app.get("/courses/java-qa", (req, res) => {
+  let courseJavaQA = require("./json/courses_lessons/java-qa.json");
+  res.render("../views/layouts/courses_lessons/java-qa", {courseJavaQA: courseJavaQA});
+});
+
+
+
+
 
 //404
 app.use((req, res) => {
   res.render("./404");
 });
-
 
 module.exports = app;
