@@ -77,6 +77,8 @@ app.use("/", routes.sign);
 /* Курсы */
 app.use("/courses", routes.courses);
 
+app.use("/admin-users", require("./db/crud")(User));
+
 app.get("/registration", (req, res) => {
   const { userId } = req.session;
   if (!userId) {

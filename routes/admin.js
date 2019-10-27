@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
   User.find({}).then((users, courses) => {
     res.render("../views/admin/admin", {
       users: users,
-      courses: courses
+      courses: courses,
     });
   });
 });
