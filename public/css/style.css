@@ -307,12 +307,75 @@ i {
 .tools-images {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   flex-wrap: wrap;
 }
 .tools-images svg {
   margin-right: 16px;
   margin-bottom: 16px;
+}
+.course-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 43vh;
+}
+@media (max-width: 767px) {
+  .course-logo {
+    display: none;
+  }
+}
+.course-logo .image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.course-title {
+  font-size: 30px;
+  font-weight: 700;
+}
+.course-author {
+  display: flex;
+  padding: 30px 20px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 43vh;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .course-author {
+    height: 39vh;
+  }
+}
+.course-author .title {
+  color: #a9b1c8;
+}
+.course-author .text {
+  color: #393939;
+  font-weight: 700;
+}
+.course-author .image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .course-author .image {
+    width: 100px;
+    min-height: 100px;
+    height: 100px;
+  }
+}
+.course-author .image svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.course-author .image image {
+  width: 105%;
+  height: 100%;
 }
 .container {
   width: 100%;
