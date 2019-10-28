@@ -33,7 +33,10 @@ app.use(staticAsset(path.join(__dirname, "/public")));
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use("/js", express.static(path.join(__dirname, "node_modules", "jquery", "dist")));
+app.use(
+  "/js",
+  express.static(path.join(__dirname, "node_modules", "jquery", "dist"))
+);
 
 app.locals.getScripts = function(req, res) {
   return app.locals.scripts;
@@ -71,6 +74,10 @@ app.get("/", async (req, res) => {
 app.use("/user", routes.user);
 app.use("/admin", routes.admin);
 app.use("/", routes.sign);
+/* Курсы */
+app.use("/courses", routes.courses);
+
+app.use("/admin-users", require("./db/crud")(User));
 
 app.get("/registration", (req, res) => {
   const { userId } = req.session;
@@ -97,26 +104,6 @@ app.get("/success", (req, res) => {
 app.get("/help", (req, res) => {
   res.render("./help");
 });
-
-/* Курсы */
-// manual-qa
-app.get("/courses/manual-qa", (req, res) => {
-  let lessons = require("./json/lessons/lessons-manual-qa.json");
-  let name = "Мануальное тестирование ПО";
-  let image = "manual-course.png";
-  res.render("../views/layouts/courses_lessons/lessons-qa", {lessons: lessons, name: name, image: image});
-});
-
-//java-qa
-app.get("/courses/java-qa", (req, res) => {
-  let lessons = require("./json/lessons/lessons-java-qa.json");
-  let name = "Курс по Java для тестировщиков";
-  let image = "java-qa-course.png";
-  res.render("../views/layouts/courses_lessons/lessons-qa", {lessons: lessons, name: name, image: image});
-});
-
-
-
 
 //404
 app.use((req, res) => {

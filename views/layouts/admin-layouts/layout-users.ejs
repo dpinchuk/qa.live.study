@@ -9,40 +9,55 @@
                 <div class="row">
                     <div class="col-10">
                         <div class="card-body">
-                            <h6 class="card-title">Имя: <%= user.name.length > 0 ? user.name : "None" %></h6>
-                            <h6 class="card-title">Фамилия: <%= user.lastName.length > 0 ? user.lastName : "None" %></h6>
-                            <h6 class="card-title">Email: <%= user.email %></h6>
-                            <h6 class="card-title">Роль: <%= user.role %></h6>
-                            <h6 class="card-title">Статус: <%= user.status %></h6>
-                            <h6 class="card-title">Тариф: <%= user.tariff.length > 0 ? user.tariff : "Not selected" %></h6>
-                            <h6 class="card-title">Создан: <%= user.createdAt %></h6>
-                            <h6 class="card-title">Редактирован: <%= user.updatedAt %></h6>
-                            <h6 class="card-title">
-                                <select class="selectpicker">Платежи пользователя
-                                    <option value="" disabled selected>Просмотреть</option>
-                                    <% user.payments.forEach(payment => { %>
-                                    <option><%= payment.paymentDate %></option>
-                                    <% }); %>
-                                </select>
-                                <label class="mdb-main-label"></label>
-                                <%= user.email %>
-                            </h6>
-
-
-
+                            <div style="display: flex; align-items: flex-start; align-content: center;">
+                                <p class="card-title" style="font-weight: 600;">Имя:&nbsp;</p><span> <%= user.name.length > 0 ? user.name : "None" %></span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; align-content: center;">
+                                <p class="card-title" style="font-weight: 600;">Фамилия:&nbsp;</p> <span><%= user.lastName.length > 0 ? user.lastName : "None" %></span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; align-content: center;">
+                                <p class="card-title" style="font-weight: 600;">Email:&nbsp;</p><span><%= user.email %></span>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; align-content: center;">
+                                <p class="card-title" style="font-weight: 600;">Роль:&nbsp;</p><%= user.role %>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; align-content: center;">
+                                <p class="card-title" style="font-weight: 600;">Статус:&nbsp;</p><%= user.status %>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; align-content: center;">
+                                <p class="card-title" style="font-weight: 600;">Тариф:&nbsp;</p><%= user.tariff.length > 0 ? user.tariff : "Not selected" %>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; align-content: center;">
+                                <p class="card-title" style="font-weight: 600;">Создан:&nbsp;</p> <%= user.createdAt %>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; align-content: center;">
+                                <p class="card-title" style="font-weight: 600;">Редактирован:&nbsp;</p><%= user.updatedAt %> 
+                            </div>
+                            <div style="display: flex; align-items: flex-start; align-content: center;">
+                                <p class="card-title" style="font-weight: 600;">Платежи пользователя&nbsp;
+                                    <select class="selectpicker">
+                                        <option value="" disabled selected>Просмотреть</option>
+                                        <% user.payments.forEach(payment => { %>
+                                            <option><%= payment.paymentDate %></option>
+                                        <% }); %>
+                                    </select>
+                                    <label class="mdb-main-label"></label>
+                                </p>
+                            </div>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <!-- <button class="btn btn-primary">Go somewhere</button> -->
+                            <button class="btn btn-primary btn-user-activate" data-user-id="<%= user.id %>" <%= user.status === 'deleted' ? '' : 'disabled' %>>Активировать</button>
+                            <button class="btn btn-warning btn-user-block" data-user-id="<%= user.id %>" data-user-status="<%= user.status %>" <%= user.status === 'deleted' ? 'disabled' : '' %>><%= user.status === "active" ? "Заблокировать" : "Разблокировать" %></button>
+                            <button class="btn btn-danger btn-user-delete" data-user-id="<%= user.id %>" <%= user.status === 'deleted' ? 'disabled' : '' %>>Удалить</button>
                         </div>
                     </div>
 
-                    <div class="col-2">
-                        <a href="#" class="btn btn-primary pb-1">Активировать</a>
-                        <a href="#" class="btn btn-warning pb-1">Заблокировать</a>
-                        <a href="#" class="btn btn-danger">Удалить</a>
-                    </div>
+                    <!-- <div class="col-2">
+                    </div> -->
                 </div>
             </div>
         </div>
         <% }); %>
     </div>
 </div>
+<script src="/js/admin-users.js"></script>

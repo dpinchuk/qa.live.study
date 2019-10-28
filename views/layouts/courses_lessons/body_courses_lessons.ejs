@@ -1,8 +1,10 @@
-<section>
-        <div class="mt-3 mb-3 d-flex justify-content-end">
-                <a href="/" class="btn btn-outline-primary mr-3">Главная</a>
-                <a href="/registration" class="btn btn-outline-warning mr-3">Регистрация</a>
-                <a href="/login" class="btn btn-outline-success mr-3">Вход</a>
+<section class="section-manual">
+    <div class="container">
+        <h1 class="section-header pt-4 pb-4 text-center"><%= name %></h1>
+        <div class="text-center pb-5 d-flex justify-content-around">
+            <a href="/" class="btn btn-outline-primary">Главная</a>
+            <a href="/registration" class="btn btn-outline-warning">Регистрация</a>
+            <a href="/login" class="btn btn-outline-success">Вход</a>
         </div>
     <div class="container">
         <h1 class="course-title mb-3 text-center"><%= name %></h1>
@@ -68,9 +70,9 @@
                             <h6 class="h6 text-primary"><i class="text-primary fa fa-graduation-cap circle mr-1"></i> <%= lesson.lessonName %></h6>
                             <ul class="list-unstyled">
                                     <% lesson.lections.forEach(lection => { %>
-                                        <li class="mb-1">
-                                            <i class="fa fa-code mr-2"></i><%= lection %>
-                                        </li>
+                                        <p class="mb-0">
+                                            <i class="fa fa-code"></i> <span><%= lection %></span>
+                                        </p>
                                     <% }) %>
                                     </ul>
                             </div>
