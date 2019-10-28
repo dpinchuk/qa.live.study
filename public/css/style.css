@@ -1,5 +1,5 @@
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
   color: #0a1331;
 }
@@ -115,8 +115,6 @@ i {
   margin-right: 0.5em;
 }
 .scroll-to-top-btn {
-  opacity: 0;
-  visibility: hidden;
   width: 54px;
   height: 54px;
   border: none;
@@ -130,15 +128,10 @@ i {
   color: #fff;
   font-size: 16px;
   background-color: #0062cc;
-  -webkit-transition: opacity 600ms, visibility 600ms;
-  transition: opacity 600ms, visibility 600ms;
 }
 .scroll-to-top-btn:hover {
   text-decoration: none;
   color: #fff;
-}
-.scroll-to-top-btn:focus {
-  outline: none;
 }
 .scroll-to-top-btn i {
   font-family: "FontAwesome";
@@ -154,7 +147,7 @@ i {
 }
 .section-title {
   font-size: 30px;
-  color: #0a1331;
+  color: #0A1331;
   margin-bottom: 35px;
   font-weight: 600;
   cursor: default;
@@ -278,10 +271,10 @@ i {
 .price-block {
   cursor: pointer;
   border-radius: 8px;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 .price-block:hover {
-  transform: scale(1.02);
+  transform: scale(1.1);
 }
 .price-block-plan {
   background: rgba(0, 0, 0, 0.2);
@@ -311,10 +304,79 @@ i {
 .price-block-description li {
   padding: 10px 0;
 }
+.tools-images {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tools-images svg {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.course-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 43vh;
+}
+@media (max-width: 767px) {
+  .course-logo {
+    display: none;
+  }
+}
+.course-logo .image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.course-title {
+  font-size: 30px;
+  font-weight: 700;
+}
+.course-author {
+  display: flex;
+  padding: 30px 20px 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 43vh;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .course-author {
+    height: 39vh;
+  }
+}
+.course-author .title {
+  color: #a9b1c8;
+}
+.course-author .text {
+  color: #393939;
+  font-weight: 700;
+}
+.course-author .image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .course-author .image {
+    width: 100px;
+    min-height: 100px;
+    height: 100px;
+  }
+}
+.course-author .image svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.course-author .image image {
+  width: 105%;
+  height: 100%;
+}
 .container {
   width: 100%;
-}
-.show {
-  visibility: visible;
-  opacity: 1;
 }
