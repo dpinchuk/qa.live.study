@@ -52,10 +52,15 @@ module.exports = Collection => {
   const update = (req, res) => {
     let changedEntry = req.body;
     changedEntry.updatedAt = Date.now();
-    Collection.updateOne({ _id: req.params._id }, { $set: changedEntry }, e => {
-      if (e) res.sendStatus(500);
-      else res.json({ success: true });
-    });
+    Collection.findByIdAndUpdate(
+      { _id: req.params._id },
+      { $set: changedEntry },
+      { new: true },
+      (e, doc) => {
+        if (e) res.sendStatus(500);
+        else res.json({ success: true, data: doc });
+      }
+    );
   };
 
   // ======
