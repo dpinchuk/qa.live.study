@@ -80,31 +80,10 @@ router.post("/reg", (req, res) => {
             lastName: lastName,
             email: email,
             password: hash,
-            role: "student",
-            status: "active",
-            tariff: "not selected",
-            payments: [],
-            expirationDate: "",
-            commentAboutUser: "",
-            courses: [],
-            updatedAt: Date.now(),
-            createdAt: Date.now()
           })
             .then(user => {
               /********************************************************************************************************/
               req.session.userId = user.id;
-              req.session.userEmail = user.email;
-              req.session.userName = user.name;
-              req.session.userLastName = user.lastName;
-              req.session.userLastName = user.lastName;
-              req.session.userRole = user.role;
-              req.session.userStatus = user.status;
-              req.session.userTariff = user.tariff;
-              req.session.userExpirationDate = user.expirationDate;
-              req.session.userCourses = user.courses;
-              req.session.userPayments = user.payments;
-              req.session.userUpdatedAt = user.updatedAt;
-              req.session.userCreatedAt = user.createdAt;
               /********************************************************************************************************/
 
               res.json({
@@ -177,21 +156,8 @@ router.post("/login", (req, res) => {
                 fields: ["email", "password"],
               });
             } else {
-
               /********************************************************************************************************/
               req.session.userId = user.id;
-              req.session.userEmail = user.email;
-              req.session.userName = user.name;
-              req.session.userLastName = user.lastName;
-              req.session.userLastName = user.lastName;
-              req.session.userRole = user.role;
-              req.session.userStatus = user.status;
-              req.session.userTariff = user.tariff;
-              req.session.userExpirationDate = user.expirationDate;
-              req.session.userCourses = user.courses;
-              req.session.userPayments = user.payments;
-              req.session.userUpdatedAt = user.updatedAt;
-              req.session.userCreatedAt = user.createdAt;
               /********************************************************************************************************/
 
               res.json({

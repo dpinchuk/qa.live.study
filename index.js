@@ -1,5 +1,5 @@
 const app = require("./app");
-const database = require("./database");
+const database = require("./db/database");
 const config = require("./config");
 
 database()

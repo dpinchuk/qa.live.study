@@ -1,38 +1,52 @@
-<link rel="stylesheet" href="<%= assetFingerprint('css/login-reg/login-reg.css') %>">
-
 <% include layouts/header.ejs %>
 
-<div class="login-form mt-1 pt-3">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class=".col-12">
-                <div class="card border-info text-center">
-                    <div class="card-header">
+        <div class="d-flex align-items-center justify-content-center login-page">
+                <div class="card text-center">
+                    <h2 class="card-header text-white bg-primary">
                         Авторизация
-                    </div>
-                    <div class="card-body pb-1">
-                        <div class="card-body__img item-transition pt-2 pb-2">
-                            <a href="/"><img src="img/logo_500x500.png" width="160"></a>
-                        </div>
-                        <form name="loginForm" class="login" method="post">
-                            <input id="login-email" type="text" class="form-control mb-4" placeholder="Ваш email" required autofocus>
-                            <input id="login-password" type="password" class="form-control mb-4" placeholder="Пароль" required>
-                            <button class="btn btn-lg btn-primary btn-block mb-4 login-button" type="submit">Войти</button>
-                            <label class="checkbox float-left">
-                                <input type="checkbox" value="remember-me">
-                                Запомнить меня
-                            </label>
-                            <a href="/help" class="float-right">Нужна помощь?</a>
+                    </h2>
+                    <div class="p-sm-3">
+                        <form name="loginForm"
+                              class="login-form d-flex flex-column align-items-center mt-3"
+                              method="post">
+                            <input id="login-email"
+                                   type="text"
+                                   class="form-control mb-4 w-75"
+                                   placeholder="Ваш email"
+                                   required
+                                   autofocus>
+                            <input id="login-password"
+                                   type="password"
+                                   class="form-control mb-4 w-75"
+                                   placeholder="Пароль"
+                                   required>
+                            <button class="btn btn-lg btn-primary btn-block mb-4 login-button w-75"
+                                    type="submit"
+                                    id="loginBtn"
+                                    >Войти
+                            </button>
+                            <div class="custom-control custom-checkbox w-100 d-flex align-items-center justify-content-between">
+                                <input type="checkbox"
+                                       class="custom-control-input"
+                                       id="rememberMeCheckbox">
+                                <label class="custom-control-label"
+                                       for="rememberMeCheckbox">
+                                       Запомнить меня
+                                </label>
+                                <a href="/help" class="ml-3">Нужна помощь?</a>
+                            </div>
                         </form>
                     </div>
-                    <a href="/password-recovery" class="btn btn-link pt-0 pb-3">Забыли пароль?</a>
+                    <a href="/password-recovery"
+                       class="btn btn-link">
+                       Забыли пароль?
+                    </a>
+                   <div class="d-flex justify-content-between p-sm-3 login-footer">
+                    <a href="/" class="mr-3">Вернуться на главную</a>
+                    <a href="/registration" class="mr-3">Создать аккаунт </a>
                 </div>
-                <a href="/" class="float-left">Вернуться на главную</a>
-                <a href="/reg" class="float-right">Создать аккаунт </a>
-            </div>
+                </div>
         </div>
-    </div>
-</div>
 
 <script src="<%= assetFingerprint('js/login.js') %>"></script>
 

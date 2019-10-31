@@ -16,13 +16,6 @@ const User = require("./models/user");
 /*App Object*/
 const app = express();
 
-let id;
-let email;
-let courses;
-let articles;
-let payments;
-let user;
-
 /*Sessions*/
 app.use(
   session({
@@ -36,7 +29,7 @@ app.use(
 );
 
 /* app.use */
-app.use(staticAsset(path.join(__dirname, "public")));
+app.use(staticAsset(path.join(__dirname, "/public")));
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -44,6 +37,11 @@ app.use(
   "/js",
   express.static(path.join(__dirname, "node_modules", "jquery", "dist"))
 );
+
+app.locals.getScripts = function(req, res) {
+  return app.locals.scripts;
+};
+
 app.use((req, res, next) => {
   delete req.body.__proto__;
   next();
@@ -56,22 +54,20 @@ app.engine("ejs", require("ejs").renderFile);
 
 /* routers */
 app.get("/", async (req, res) => {
-  id = req.session.userId;
-  email = req.session.userEmail;
+  const { userId } = req.session;
+  let user = null;
 
-  courses = await Courses.find({});
-  articles = await Articles.find({});
-  payments = await Payments.find({});
-  user = await User.find({ email: email });
-
+  const courses = await Courses.find({});
+  const articles = await Articles.find({});
+  const payments = await Payments.find({});
+  if (userId) {
+    user = await User.findOne({ _id: userId }, { password: 0 }).exec();
+  }
   res.render("./main", {
     courses,
     articles,
     payments,
-    user: {
-      id,
-      email,
-    },
+    user,
   });
 });
 
@@ -97,23 +93,24 @@ app.get("/json", async (req, res) => {
 
 app.use("/user", routes.user);
 app.use("/admin", routes.admin);
-
 app.use("/", routes.sign);
+/* Курсы */
+app.use("/courses", routes.courses);
 
-app.get("/reg", (req, res) => {
-  id = req.session.userId;
-  email = req.session.userEmail;
-  if (!id && !email) {
-    res.render("./reg");
+app.use("/admin-users", require("./db/crud")(User));
+
+app.get("/registration", (req, res) => {
+  const { userId } = req.session;
+  if (!userId) {
+    res.render("./registration");
   } else {
     res.redirect("/user/account");
   }
 });
 
 app.get("/login", (req, res) => {
-  id = req.session.userId;
-  email = req.session.userEmail;
-  if (!id && !email) {
+  const { userId } = req.session;
+  if (!userId) {
     res.render("./login");
   } else {
     res.redirect("/user/account");
@@ -129,19 +126,8 @@ app.get("/help", (req, res) => {
 });
 
 //404
-app.use((req, res, next) => {
-  const error = new Error("Not Found");
-  error.status = 404;
-  next(error);
-});
-
-app.use((req, res, next) => {
-  res.status(500).json({ err: "500" });
-});
-
-app.use((err, req, res, next) => {
-  console.log(err.stack);
-  res.status(404).json({ err: "404" });
+app.use((req, res) => {
+  res.render("./404");
 });
 
 module.exports = app;

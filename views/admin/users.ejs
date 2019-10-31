@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Title</title>
-  </head>
-  <body>
-    <ul>
-      <% users.forEach(function(user){ %>
-      <li>
-        <b><%= user.name %> <%= user.lastName %></b>
-        <br />
-        <%= user.status %>
-      </li>
-      <br />
-      <br />
-      <% }); %>
-    </ul>
-  </body>
-</html>
+<link rel="stylesheet" href="<%= assetFingerprint('/css/user/users.css') %>">
+
+<% include ../layouts/header.ejs %>
+<% include ../layouts/admin-layouts/layout-users.ejs %>
+
+<button class="scroll-to-top-btn"><i class="fas fa-arrow-up"></i></button>
+
+<% include ../layouts/footer.ejs %>
+
+<script src="<%= assetFingerprint('/js/backtotop.js') %>"></script>

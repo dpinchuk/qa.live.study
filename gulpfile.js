@@ -1,25 +1,15 @@
 const gulp = require("gulp");
-const sass = require("gulp-sass");
-const autoprefixer = require("gulp-autoprefixer");
-const cssnano = require("gulp-cssnano");
-const plumber = require("gulp-plumber");
+const path = require("path");
+const less = require("gulp-less");
 
-gulp.task("scss", () => {
+gulp.task("less", () => {
   return gulp
-    .src("dev/scss/**/*.scss")
-    .pipe(plumber())
-    .pipe(sass())
+    .src("styles/**/style.less")
     .pipe(
-      autoprefixer(["last 15 version", "> 1%", "ie 8", "ie 7"], {
-        cascade: true,
+      less({
+        paths: [path.join(__dirname, "less", "includes")],
       })
     )
-    .pipe(cssnano())
-    .pipe(gulp.dest("public/css"));
+    .pipe(gulp.dest("./public/css"));
   // .pipe(browserSync.reload({stream: true}))
-});
-
-gulp.task("default", ["scss"], () => {
-  gulp.watch("dev/scss/**/*.scss", ["scss"]);
-  // gulp.watch('dist/*.html', browserSync.reload);
 });

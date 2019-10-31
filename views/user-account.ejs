@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="<%= assetFingerprint('/css/user/user-account.css') %>">
-<link rel="stylesheet" href="<%= assetFingerprint('/css/support/button-up.css') %>">
 
-<% include layouts/header.ejs %>
-<% include layouts/layout-user-account.ejs %>
+<% include ./layouts/header.ejs %>
+<% include ./layouts/layout-user-account.ejs %>
 
-<a href="#" title="Вернуться к началу" class="topbutton"><i class="arrow up"></i></a>
+<button class="scroll-to-top-btn"><i class="fas fa-arrow-up"></i></button>
 
-<% include layouts/footer.ejs %>
+<% include ./layouts/footer.ejs %>
+
+<script src="<%= assetFingerprint('/js/backtotop.js') %>"></script>

@@ -1,0 +1,34 @@
+
+.advantage {
+  &-title {
+    text-align: center;
+    line-height: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    color: @baseWhite;
+    letter-spacing: 1px;
+  }
+  &-description {
+    font-size: 15px;
+    margin-top: 15px;
+    line-height: 2;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .section-advantages__best-description {
+    font-size: 25px;
+  }
+  .section-home-top__text {
+    font-size: 40px;
+  }
+  .section-home-top__links {
+    flex-direction: column;
+    align-items: center;
+    height: 140px
+  }
+  .section-advantages__best.shadow {
+    box-shadow: none;
+  }
+}
