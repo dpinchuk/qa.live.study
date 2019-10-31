@@ -22,7 +22,7 @@
                                 <p class="card-title" style="font-weight: 600;">Роль:&nbsp;</p><%= user.role %>
                             </div>
                             <div style="display: flex; align-items: flex-start; align-content: center;">
-                                <p class="card-title" style="font-weight: 600;">Статус:&nbsp;</p><%= user.status %>
+                                <p class="card-title" style="font-weight: 600;">Статус:&nbsp;</p><span class="user-status"><%= user.status %></span>
                             </div>
                             <div style="display: flex; align-items: flex-start; align-content: center;">
                                 <p class="card-title" style="font-weight: 600;">Тариф:&nbsp;</p><%= user.tariff.length > 0 ? user.tariff : "Not selected" %>
@@ -46,8 +46,8 @@
                             </div>
                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             <!-- <button class="btn btn-primary">Go somewhere</button> -->
-                            <button class="btn btn-primary btn-user-activate" data-user-id="<%= user.id %>" <%= user.status === 'deleted' ? '' : 'disabled' %>>Активировать</button>
-                            <button class="btn btn-warning btn-user-block" data-user-id="<%= user.id %>" data-user-status="<%= user.status %>" <%= user.status === 'deleted' ? 'disabled' : '' %>><%= user.status === "active" ? "Заблокировать" : "Разблокировать" %></button>
+                            <!-- <button class="btn btn-primary btn-user-activate" data-user-id="<%= user.id %>" <%= user.status === 'deleted' ? '' : 'disabled' %>>Активировать</button> -->
+                            <button class="btn btn-warning btn-user-block" data-loading-text="Loading..." data-user-id="<%= user.id %>" data-user-status="<%= user.status %>"><%= user.status === "active" ? "Заблокировать" : "Разблокировать" %></button>
                             <button class="btn btn-danger btn-user-delete" data-user-id="<%= user.id %>" <%= user.status === 'deleted' ? 'disabled' : '' %>>Удалить</button>
                         </div>
                     </div>
