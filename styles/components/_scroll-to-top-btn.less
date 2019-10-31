@@ -1,4 +1,6 @@
 .scroll-to-top-btn {
+  opacity: 0;
+  visibility: hidden;
   width: 54px;
   height: 54px;
   border: none;
@@ -12,10 +14,16 @@
   color: @baseWhite;
   font-size: 16px;
   background-color: #0062cc;
+  -webkit-transition: opacity 600ms, visibility 600ms;
+  transition: opacity 600ms, visibility 600ms;
 
   &:hover {
     text-decoration: none;
     color: @baseWhite;
+  }
+
+  &:focus {
+    outline: none;
   }
 
   i {
@@ -31,4 +39,9 @@
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
   }
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
 }
