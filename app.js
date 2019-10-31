@@ -72,22 +72,21 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/json", async (req, res) => {
-  id = req.session.userId;
-  email = req.session.userEmail;
+  let { userId } = req.session;
+  let user;
+  const courses = await Courses.find({});
+  const articles = await Articles.find({});
+  const payments = await Payments.find({});
 
-  courses = await Courses.find({});
-  articles = await Articles.find({});
-  payments = await Payments.find({});
-  user = await User.find({ email: email });
+  if (userId) {
+    user = await User.findById(userId, { password: 0 });
+  }
 
   res.json({
     courses,
     articles,
     payments,
-    user: {
-      id,
-      email,
-    },
+    user: user && user,
   });
 });
 
