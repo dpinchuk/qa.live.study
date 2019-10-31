@@ -12,6 +12,7 @@ const Courses = require("./models/courses");
 const Articles = require("./models/articles");
 const Payments = require("./models/payments");
 const User = require("./models/user");
+const cors = require("cors");
 
 /*App Object*/
 const app = express();
@@ -29,6 +30,7 @@ app.use(
 );
 
 /* app.use */
+app.use(cors());
 app.use(staticAsset(path.join(__dirname, "/public")));
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
