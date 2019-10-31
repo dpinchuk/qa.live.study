@@ -71,6 +71,26 @@ app.get("/", async (req, res) => {
   });
 });
 
+app.get("/json", async (req, res) => {
+  id = req.session.userId;
+  email = req.session.userEmail;
+
+  courses = await Courses.find({});
+  articles = await Articles.find({});
+  payments = await Payments.find({});
+  user = await User.find({ email: email });
+
+  res.json({
+    courses,
+    articles,
+    payments,
+    user: {
+      id,
+      email,
+    },
+  });
+});
+
 app.use("/user", routes.user);
 app.use("/admin", routes.admin);
 app.use("/", routes.sign);
