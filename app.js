@@ -29,8 +29,9 @@ app.use(
   })
 );
 
+const corsOptions = { origin: "http://localhost:3030", credentials: true };
 /* app.use */
-app.use(cors());
+app.use(cors({ origin: true, credentials: true }));
 app.use(staticAsset(path.join(__dirname, "/public")));
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,6 +40,26 @@ app.use(
   "/js",
   express.static(path.join(__dirname, "node_modules", "jquery", "dist"))
 );
+
+// app.use(function(req, res, next) {
+//   next();
+// });
+// app.use(function(req, res, next) {
+//   console.log("app.use", req.headers);
+//   console.log("app.use method", req.method);
+//   res.header("Access-Control-Allow-Credentials", true);
+//   res.header("Access-Control-Allow-Origin", req.headers.origin);
+//   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Response-Time, X-PINGOTHER, X-CSRF-Token,Authorization"
+//   );
+//   if (req.method === "OPTIONS") {
+//     return res.status(200).end();
+//   } else {
+//     next();
+//   }
+// });
 
 app.locals.getScripts = function(req, res) {
   return app.locals.scripts;
@@ -75,6 +96,7 @@ app.get("/", async (req, res) => {
 
 app.get("/json", async (req, res) => {
   let { userId } = req.session;
+  console.log("/json session", req.session);
   let user;
   const courses = await Courses.find({});
   const articles = await Articles.find({});
