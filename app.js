@@ -96,7 +96,6 @@ app.get("/", async (req, res) => {
 
 app.get("/json", async (req, res) => {
   let { userId } = req.session;
-  console.log("/json session", req.session);
   let user;
   const courses = await Courses.find({});
   const articles = await Articles.find({});

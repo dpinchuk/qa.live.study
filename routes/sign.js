@@ -117,7 +117,7 @@ router.post("/reg", (req, res) => {
 router.post("/login", (req, res) => {
   const email = req.body.email.trim();
   const password = req.body.password.trim();
-
+  console.log("BODY", req.body);
   if (!email || !password) {
     res.json({
       success: false,
@@ -159,7 +159,7 @@ router.post("/login", (req, res) => {
               /********************************************************************************************************/
               req.session.userId = user.id;
               /********************************************************************************************************/
-              console.log("req.cookies", req.session);
+
               res.json({
                 success: true,
               });
