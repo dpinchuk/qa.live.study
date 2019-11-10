@@ -106,7 +106,7 @@ app.get("/json", async (req, res) => {
     user = await User.findById(userId, { password: 0 });
   }
 
-  res.json({
+  res.status(200).json({
     courses,
     articles,
     payments,
