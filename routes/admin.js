@@ -18,6 +18,11 @@ router.get("/users", (req, res) => {
   });
 });
 
+router.get("/users/json", async (req, res) => {
+  const users = await User.find({});
+  res.status(200).json({ users });
+});
+
 router.get("/courses", (req, res) => {
   Courses.find({}).then(courses => {
     res.render("../views/admin/courses", { courses: courses });
