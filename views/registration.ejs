@@ -1,74 +1,44 @@
 <% include layouts/header.ejs %>
 
 <div class="d-flex align-items-center justify-content-center login-page">
-     <div class="card text-center">
-        <h2 class="card-header text-white bg-primary">
-           Регистрация
-        </h2>
-           <form name="regForm"
-                 class="d-flex flex-column align-items-center mt-3"
-                 method="POST">
-<!--        <input type="text" name="name" class="form-control mb-2" placeholder="Ваше Имя" required data-value-missing="Translate('Required')" pattern="/^[a-z]{2,35}$/" >-->
-                <input id="register-name"
-                       type="text"
-                       name="name"
-                       class="form-control mb-3 w-75"
-                       placeholder="Ваше Имя"
-                       minlength="2"
-                       maxlength="35">
-<!--                   <div class="error" id="nameErr"></div>-->
-               <input id="register-lastName"
-                      type="text"
-                      name="lastName"
-                      class="form-control mb-3 w-75"
-                      placeholder="Ваша Фамилия"
-                      minlength="1"
-                      maxlength="35" >
-<!--            <input type="text" name="lastName" class="form-control mb-2" placeholder="Ваша Фамилия" >-->
-               <input id="register-email"
-                      type="text"
-                      name="email"
-                      class="form-control mb-3 w-75"
-                      placeholder="Ваш Email*"
-                      required
-                      autofocus>
-               <input id="register-password"
-                      type="password"
-                      name="password"
-                      class="form-control mb-3 w-75"
-                      placeholder="Пароль*"
-                      required
-                      minlength="6"
-                      maxlength="32">
-                <!-- <input type="password" name="password" class="form-control mb-2" placeholder="Пароль*" >-->
-                <input id="register-confirmPass"
-                       type="password"
-                       name="confirmPass"
-                       class="form-control mb-3 w-75"
-                       placeholder="Подтверждение пароля*"
-                       required
-                       minlength="6"
-                       maxlength="32">
-<!--            <input type="password" name="confirmPass" class="form-control mb-2" placeholder="Подтверждение пароля*" >-->
-                <button class="btn btn-lg btn-primary btn-block w-75"
-                        type="submit">
-                        Зарегистрироваться
-                </button>
-            </form>
+  <div class="card text-center">
+    <h2 class="card-header text-white bg-primary">
+      Регистрация
+    </h2>
+    <form name="regForm" id="regForm" class="d-flex flex-column align-items-center mt-3" method="POST">
+      <!--        <input type="text" name="name" class="form-control mb-2" placeholder="Ваше Имя" required data-value-missing="Translate('Required')" pattern="/^[a-z]{2,35}$/" >-->
+      <input id="register-name" type="text" name="name" class="form-control mb-3 w-75" placeholder="Ваше Имя"
+        minlength="2" maxlength="35">
+      <!--                   <div class="error" id="nameErr"></div>-->
+      <input id="register-lastName" type="text" name="lastName" class="form-control mb-3 w-75"
+        placeholder="Ваша Фамилия" minlength="1" maxlength="35">
+      <!--            <input type="text" name="lastName" class="form-control mb-2" placeholder="Ваша Фамилия" >-->
+      <input id="register-email" type="text" name="email" class="form-control mb-3 w-75" placeholder="Ваш Email*"
+        required autofocus>
+      <input id="register-password" type="password" name="password" class="form-control mb-3 w-75" placeholder="Пароль*"
+        required minlength="6" maxlength="32">
+      <!-- <input type="password" name="password" class="form-control mb-2" placeholder="Пароль*" >-->
+      <input id="register-confirmPass" type="password" name="confirmPass" class="form-control mb-3 w-75"
+        placeholder="Подтверждение пароля*" required minlength="6" maxlength="32">
+      <!--            <input type="password" name="confirmPass" class="form-control mb-2" placeholder="Подтверждение пароля*" >-->
+      <button class="btn btn-lg btn-primary btn-block w-75" type="submit">
+        Зарегистрироваться
+      </button>
+    </form>
 
-        <div class="d-flex align-items-center justify-content-between p-2 login-footer">
-         <a href="/" class="mr-3">
-           Вернуться на главную
-         </a>
-         <a href="/login" class="mr-3">
-           Уже есть аккаунт
-         </a>
-         <a href="/help" class="mr-3">
-           Нужна помощь?
-         </a>
-       </div>
-   </div>
-   </div>
+    <div class="d-flex align-items-center justify-content-between p-2 login-footer">
+      <a href="/" class="mr-3">
+        Вернуться на главную
+      </a>
+      <a href="/login" class="mr-3">
+        Уже есть аккаунт
+      </a>
+      <a href="/help" class="mr-3">
+        Нужна помощь?
+      </a>
+    </div>
+  </div>
+</div>
 
 <script src="<%= assetFingerprint('/js/register.js') %>"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
