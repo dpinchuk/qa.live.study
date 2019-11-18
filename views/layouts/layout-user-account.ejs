@@ -1,13 +1,13 @@
-<div class="user-account">
+<div class="user-account pt-3">
     <div class="container">
-        <h1 class="account-header pt-5 pb-5 text-center">Аккаунт пользователя</h1>
+        <h1 class="account-header mb-3 text-center">Мой аккаунт</h1>
         <div class="row">
 
             <div class="col-sm-12 col-lg-4">
 
-                <div class="d-flex justify-content-between mb-3">
-                    <a href="/" class="btn btn-left btn-primary text-white">В главное меню</a>
-                    <a href="/logout" class="btn btn-right btn-danger text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Выход&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                <div class="d-flex justify-content-between mb-3 user-account-actions">
+                    <a href="/" class="btn btn-primary text-white">В главное меню</a>
+                    <a href="/logout" class="btn btn-danger text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Выход&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                 </div>
 
                 <div class="user-bar mb-3">
@@ -27,75 +27,66 @@
                         </div>
                         <div class="clear"></div>
                     </div>
-                    <ul class="bar-body">
-                        <li class=""><a href="#!" class="collection-item grey-text text-muted">Редактировать профиль</a></li>
-                        <li class=""><a href="#!" class="collection-item grey-text text-darken-4">Изменить email</a></li>
-                        <li class=""><a href="#!" class="collection-item grey-text text-darken-4">Изменить пароль</a></li>
-                        <li><a href="#!" class="collection-item grey-text text-muted">Ответы к тестам</a></li>
-                        <li><a href="#!" class="collection-item grey-text text-darken-4">Как пользоваться платформой</a></li>
+                    <ul class="bar-body list-unstyled">
+                        <li class="mb-2"><a href="#!" class="text-dark">Редактировать профиль</a></li>
+                        <li class="mb-2"><a href="#!" class="text-dark">Изменить email</a></li>
+                        <li class="mb-2"><a href="#!" class="text-dark">Изменить пароль</a></li>
+                        <li class="mb-2"><a href="#!" class="text-dark">Ответы к тестам</a></li>
+                        <li class="mb-2"><a href="#!" class="text-dark">Как пользоваться платформой</a></li>
                     </ul>
                 </div>
 
                 <div class="user-bar-info mb-2">
-                    <h3 class="courses-header text-danger" >Мои данные</h3>
+                    <h3 class="text-center">Мои данные</h3>
 
-                    <table class="content-table table-striped table">
+                    <table class="content-table table-responsive table-striped table">
                         <thead>
                         <tr>
-                            <td class="teal lighten-2 user-data-item">Имя</td><td><%= user.name %></td>
+                            <td class="teal lighten-2 font-weight-bold">Имя</td><td><%= user.name %></td>
                         </tr>
 
                         <tr>
-                            <td class="teal lighten-2 user-data-item">Фамилия</td><td><%= user.lastName %></td>
+                            <td class="teal lighten-2 font-weight-bold">Фамилия</td><td><%= user.lastName %></td>
                         </tr>
 
                         <tr>
-                            <td class="teal lighten-2 user-data-item">Email</td><td><%= user.email %></td>
+                            <td class="teal lighten-2 font-weight-bold">Email</td><td><%= user.email %></td>
                         </tr>
 
                         <tr>
-                            <td class="teal lighten-2 user-data-item">Роль</td><td><%= user.role %></td>
+                            <td class="teal lighten-2 font-weight-bold">Роль</td><td><%= user.role %></td>
                         </tr>
 
                         <tr>
-                            <td class="teal lighten-2 user-data-item">Создан</td><td><%= new Date(user.createdAt).toLocaleString() %></td>
+                            <td class="teal lighten-2 font-weight-bold">Создан</td><td><%= new Date(user.createdAt).toLocaleString() %></td>
                         </tr>
 
                         <tr>
-                            <td class="teal lighten-2 user-data-item">Изменен</td><td><%= new Date(user.updatedAt).toLocaleString() %></td>
+                            <td class="teal lighten-2 font-weight-bold">Изменен</td><td><%= new Date(user.updatedAt).toLocaleString() %></td>
                         </tr>
 
                         <tr>
-                            <td class="teal lighten-2 user-data-item">Статус</td><td><%= user.status %></td>
+                            <td class="teal lighten-2 font-weight-bold">Статус</td><td><%= user.status %></td>
                         </tr>
 
                         <tr>
-                            <td class="teal lighten-2 user-data-item">Тариф</td><td><%= user.tariff %></td>
+                            <td class="teal lighten-2 font-weight-bold">Тариф</td><td><%= user.tariff %></td>
                         </tr>
                         </thead>
                     </table>
                 </div>
-
-                <div class="d-flex justify-content-between mb-4">
-                    <a href="/" class="btn btn-left btn-primary text-white">В главное меню</a>
-                    <a href="/logout" class="btn btn-right btn-danger text-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Выход&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                </div>
-
             </div>
-
             <div class="col-sm-12 col-lg-8">
 
                 <div class="pb-5">
-                    <div class="user-courses">
-                        <h3 class="courses-header">Мои курсы</h3>
-                    </div>
+                        <h3 class="text-center">Мои курсы</h3>
                     <div class="courses-content">
-                        <table class="content-table table-striped table table-hover">
-                            <thead>
+                        <table class="content-table table-striped table table-responsive">
+                            <thead class="bg-primary text-white">
                             <tr>
-                                <th class="teal lighten-2">Имя курса</th>
-                                <th class="teal lighten-2">Прогресс</th>
-                                <th class="teal lighten-2">Action</th>
+                                <th>Имя курса</th>
+                                <th>Прогресс</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
 
@@ -104,13 +95,13 @@
                             <% user.courses.forEach(course => { %>
                                 <tr>
                                     <% if(course.progressPercent === 100) { %>
-                                        <td class="pl-4 text-secondary"><%= course.courseName %></td>
-                                        <td class="pl-4 text-secondary"><%= course.progressPercent %>%</td>
-                                        <td><a href="#!" type="button" class="disabled btn btn-info d-block btn-lg">Продолжить</a></td>
+                                        <td class="text-secondary"><%= course.courseName %></td>
+                                        <td class="text-secondary"><%= course.progressPercent %>%</td>
+                                        <td><a href="#!" type="button" class="disabled btn btn-primary d-block btn-lg">Продолжить</a></td>
                                     <% } else { %>
-                                        <td class="pl-4"><dt><%= course.courseName %></dt></td>
-                                        <td class="pl-4"><dt><%= course.progressPercent %>%</dt></td>
-                                        <td><a href="#!" type="button" class="btn btn-info d-block btn-lg">Продолжить</a></td>
+                                        <td><%= course.courseName %></td>
+                                        <td><%= course.progressPercent %>%</td>
+                                        <td><a href="#!" type="button" class="btn btn-primary d-block btn-lg">Продолжить</a></td>
                                     <% } %>
                                 </tr>
                             <% }); %>
@@ -118,20 +109,18 @@
                             </tbody>
                         </table>
                     </div>
-                    <a href="/courses" type="button" class="btn btn-outline-primary btn-block text-primary">Добавить курс</a>
+                    <a href="/courses" type="button" class="btn btn-primary btn-block">Добавить курс</a>
                 </div>
 
                 <div class="pb-5">
-                    <div class="user-courses">
-                        <h3 class="courses-header">Мои оплаты</h3>
-                    </div>
+                        <h3 class="text-center">Мои оплаты</h3>
                     <div class="courses-content">
                         <table class="content-table table-striped table">
-                            <thead>
+                            <thead class="bg-primary text-white">
                             <tr>
-                                <th class="teal lighten-2">Дата оплаты</th>
-                                <th class="teal lighten-2">Сумма оплаты, грн.</th>
-                                <th class="teal lighten-2">Период оплаты, мес.</th>
+                                <th>Дата оплаты</th>
+                                <th>Сумма оплаты, грн.</th>
+                                <th>Период оплаты, мес.</th>
                             </tr>
                             </thead>
 
@@ -139,16 +128,16 @@
 
                             <% user.payments.forEach(payment => { %>
                                 <tr>
-                                    <td class="pl-4 text-secondary"><%= new Date(payment.paymentDate).toLocaleString() %></td>
-                                    <td class="pl-4 text-secondary"><%= payment.paymentSumm %></td>
-                                    <td class="pl-4 text-secondary"><%= payment.paymentMonthPeriod %></td>
+                                    <td class="text-secondary"><%= new Date(payment.paymentDate).toLocaleString() %></td>
+                                    <td class="text-secondary"><%= payment.paymentSumm %></td>
+                                    <td class="text-secondary"><%= payment.paymentMonthPeriod %></td>
                                 </tr>
                             <% }); %>
 
                             </tbody>
                         </table>
                     </div>
-                    <a href="/payment" type="button" class="btn btn-outline-primary btn-block text-primary">Оплатить</a>
+                    <a href="/payment" type="button" class="btn btn-primary btn-block">Оплатить</a>
                 </div>
 
             </div>

@@ -1,5 +1,5 @@
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
   color: #0a1331;
 }
@@ -43,9 +43,10 @@ i {
 .btn-large:hover {
   color: #ffffff !important;
   background-color: #0069d9 !important;
+  text-decoration: none;
 }
 .navbar-nav .nav-link {
-  color: #fff;
+  color: #fff !important;
 }
 .navbar-dark .navbar-nav .nav-link {
   color: #fff;
@@ -136,6 +137,7 @@ i {
 .scroll-to-top-btn:hover {
   text-decoration: none;
   color: #fff;
+  opacity: 0.7;
 }
 .scroll-to-top-btn:focus {
   outline: none;
@@ -152,9 +154,13 @@ i {
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
 }
+.show {
+  visibility: visible;
+  opacity: 1;
+}
 .section-title {
   font-size: 30px;
-  color: #0a1331;
+  color: #0A1331;
   margin-bottom: 35px;
   font-weight: 600;
   cursor: default;
@@ -210,37 +216,41 @@ i {
   }
 }
 .course-item {
+  box-shadow: 0 4px 15px 0 rgba(115, 125, 155, 0.3), 0 -4px 16px 0 rgba(10, 19, 49, 0.08);
   /*  .tablet({
     display: flex;
     flex-direction: column;
   }); */
 }
-.course-item img {
-  height: 100px;
+@media (max-width: 767px) {
+  .course-item {
+    box-shadow: 0 4px 15px 0 rgba(115, 125, 155, 0.3);
+  }
 }
 .course-image {
-  width: 33.3%;
   background-image: linear-gradient(to bottom right, white, #cdf6ff);
-  /*background-color: #ffc107;*/
+  height: 150px;
 }
 @media (max-width: 767px) {
   .course-image {
     width: 50%;
-    margin: 0;
+    margin: 0 auto 12px;
+    height: auto;
   }
 }
-@media (max-width: 767px) {
-  .course-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
+.course-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 @media (min-width: 481px) and (max-width: 979px) {
   .course-actions {
     width: 100%;
   }
+}
+.course-actions .btn {
+  width: 50%;
 }
 .login-page {
   height: 100vh;
@@ -384,10 +394,122 @@ i {
   width: 105%;
   height: 100%;
 }
+.error-bg {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.error-bg .logo {
+  height: 250px;
+  width: 250px;
+}
+.error-bg .btn-light {
+  color: red !important;
+}
+.error-bg .btn-light:hover {
+  color: blue !important;
+}
+.user-account {
+  background-color: #f5f5f5;
+}
+.user-account-actions {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .user-account-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.user-account-actions a {
+  width: 45%;
+}
+@media (max-width: 767px) {
+  .user-account-actions a {
+    width: 65%;
+    margin-bottom: 10px;
+  }
+}
+.user-account table td,
+.user-account table th {
+  vertical-align: middle;
+  padding-left: 20px;
+}
+@media (max-width: 767px) {
+  .user-account h1,
+  .user-account h3 {
+    font-size: 40px;
+  }
+}
+.user-bar {
+  border-radius: 5px !important;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1) !important;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: none;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .user-bar {
+    width: 100%;
+  }
+}
+.user-bar .bar-body {
+  padding-left: 20px;
+  padding-top: 16px;
+}
+@media (max-width: 767px) {
+  .user-bar .bar-body {
+    width: 100%;
+    font-size: 20px;
+    padding-left: 20px;
+  }
+}
+.content-table {
+  width: 100%;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.bar-header {
+  display: flex;
+  padding: 20px 10px 10px 20px;
+  background-color: #eae7e7;
+  width: 100%;
+  border-bottom: 1px solid #e4e4e4;
+}
+.header-img {
+  width: 100%;
+  margin-right: 35px;
+  overflow: hidden;
+  border-radius: 50%;
+  max-width: 70px;
+}
+.account-header {
+  font-size: 30px;
+  font-weight: bold;
+  display: block;
+}
+.header-content {
+  display: grid;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-top: 0;
+  border: none;
+  width: 100%;
+  border-radius: 0;
+}
 .container {
   width: 100%;
-}
-.show {
-  visibility: visible;
-  opacity: 1;
 }
