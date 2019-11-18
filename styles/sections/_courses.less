@@ -2,35 +2,35 @@
 
 
 &-item {
+  box-shadow: 0 4px 15px 0 rgba(115,125,155,0.3),
+  0 -4px 16px 0 rgba(10,19,49,0.08);
  /*  .tablet({
     display: flex;
     flex-direction: column;
   }); */
-  img {
-    height: 100px;
-  }
+  .mobile({
+    box-shadow: 0 4px 15px 0 rgba(115,125,155,0.3);
+  });
 }
  &-image {
-  width: 33.3%;
   background-image: linear-gradient(to bottom right, white, #cdf6ff);
-  /*background-color: #ffc107;*/
+  height: 150px;
   .mobile({
     width: 50%;
-    margin: 0;
-  })
+    margin: 0 auto 12px;
+    height: auto;
+  });
  }
-
  &-actions {
-  .mobile({
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-  });
   .tablet({
       width: 100%;
-  })
-
+  });
+  .btn {
+    width: 50%;
+  }
  }
-
 }
